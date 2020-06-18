@@ -13,8 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-// Route::group([
-// 	'namespace' => 'Api'
-// ], function () {
-// 	Route::post('/users')
-// });
+Route::group([
+	'namespace' => 'Api',
+	'middleware' => 'api',
+], function () {
+	Route::post('/auth', 'AuthController@store')->name('store');
+});
