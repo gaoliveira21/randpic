@@ -21,7 +21,7 @@ class AuthMiddleware extends BaseMiddleware
 
         try {
             $user = JWTAuth::parseToken()->authenticate();
-            $request->attributes->add(['currentUser' => $user]);
+            $request->attributes->add(['loggedUser' => $user]);
         } catch(Exception $e) {
             if($e instanceof \Tymon\JWTAuth\Exceptions\TokenInvalidException) {
                 return response()->json(['status' => 'Token is invalid'], 401);
