@@ -17,5 +17,7 @@ Route::group([
 	'namespace' => 'Api',
 	'middleware' => 'api',
 ], function () {
-	Route::post('/auth', 'AuthController@store')->name('store');
+	Route::post('/auth', 'AuthController@store')->name('auth.store');
+	
+	Route::post('/users', 'UserController@store')->name('user.store');
 });
