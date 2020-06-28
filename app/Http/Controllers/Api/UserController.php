@@ -48,7 +48,7 @@ class UserController extends Controller
 
         $user = User::create($request->all());
 
-        return response()->json($user);
+        return response()->json($user, 201);
     }
 
     /**
@@ -57,9 +57,15 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Request $request): JsonResponse
     {
-        //
+        $id = $request->attributes->get('loggedUserID');
+
+        if(!$user = User::find($id)) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+
+        return response()->json([$user]);
     }
 
     /**
