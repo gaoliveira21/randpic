@@ -15,9 +15,14 @@ use Illuminate\Http\Request;
 
 Route::group([
 	'namespace' => 'Api',
-	'middleware' => 'api',
 ], function () {
 	Route::post('/auth', 'AuthController@store')->name('auth.store');
-	
 	Route::post('/users', 'UserController@store')->name('user.store');
+
+	// private routes
+	Route::group([
+		'middleware' => 'jwt.verify'
+	], function () {
+		Route::get('/user', 'UserController@show')->name('user.show');		
+	});
 });
