@@ -37964,7 +37964,7 @@ function App() {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/home.svg?ef77e42266e892c2cd7da7c2ee6a9c74";
+module.exports = "/images/home.svg?1470fb37de9f6893b2ff52b8f0b4c1a6";
 
 /***/ }),
 
@@ -37975,7 +37975,7 @@ module.exports = "/images/home.svg?ef77e42266e892c2cd7da7c2ee6a9c74";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/login.svg?a2f3d99f08909c4ebd93269f1770714c";
+module.exports = "/images/login.svg?4d9400d0008aa5cc77b63db9963fa9e3";
 
 /***/ }),
 
@@ -37986,7 +37986,7 @@ module.exports = "/images/login.svg?a2f3d99f08909c4ebd93269f1770714c";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/register.svg?ae3b53a494fda18692085b41f5674c80";
+module.exports = "/images/register.svg?3306ba54b64d8fbc9df8a8da490f08d4";
 
 /***/ }),
 
