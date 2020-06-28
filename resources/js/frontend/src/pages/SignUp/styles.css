@@ -41,7 +41,8 @@
 .form p {
   text-align: center;
 }
-.imgLogin{
-  width: 500px;
-  margin-right: 80px;
+.imgRegister{
+  width: 600px;
+  height: auto;
+  margin-left: 80px;
 }

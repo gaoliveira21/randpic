@@ -903,6 +903,25 @@ var unitlessKeys = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/frontend/src/pages/Home/styles.css":
+/*!*****************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/frontend/src/pages/Home/styles.css ***!
+  \*****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".menu {\r\n  margin: 0;\r\n  padding: 0;\r\n  overflow: hidden;\r\n  background-color: #fff;\r\n  padding: 24px 24px;\r\n  display: relative;\r\n}\r\n\r\n.menu h1{\r\n  float: left;\r\n}\r\n\r\n.menu ul{\r\n  float: right;\r\n}\r\n.menu ul li{\r\n  display: inline;\r\n  padding: 24px 18px;\r\n}\r\n.menu ul li a{\r\n  font-size: 16px;\r\n  color: #555555;\r\n}\r\n.menu ul li button{\r\n  background-color: #A26769;\r\n  padding: 12px 24px;\r\n  border: none;\r\n  border-radius: 4px;\r\n}\r\n.menu ul li button a{\r\n  color: #fff;\r\n}\r\n\r\n/* Content */\r\n.container-home{\r\n  margin: 0 auto;\r\n  width: 80%;\r\n  display: flex;\r\n  height: calc(100vh - 91px);\r\n  flex-direction: row;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.content-home{\r\n  width: 50%;\r\n}\r\n\r\n.content-home h2{\r\n  font-size: 48px;\r\n  margin: 24px 0;\r\n}\r\n.content-home p {\r\n  font-size: 16px;\r\n  line-height: 32px;\r\n}\r\n.imgHome{\r\n  margin-left: 24px;\r\n  width: 50%;\r\n}\r\n.content-home button {\r\n  width: 100%;\r\n  margin: 24px 0;\r\n  padding: 18px 48px;\r\n  background-color: #A26769;\r\n  color: #fff;\r\n  font-weight: 700;\r\n  font-size: 16px;\r\n}\r\n.content-home button svg{\r\n  margin-right: 12px;\r\n  font-weight: 700;\r\n  font-size: 16px;\r\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/frontend/src/pages/SignIn/styles.css":
 /*!*******************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/frontend/src/pages/SignIn/styles.css ***!
@@ -915,7 +934,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "body {\r\n  background-color: #f9f9f9;\r\n}\r\n.container{\r\n  margin: 0 auto 80px;\r\n  width: 90%;\r\n  height: 100vh;\r\n  display: flex;\r\n  flex-direction: row;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.form {\r\n  width: 400px;\r\n  background-color: #fff;\r\n  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.10);\r\n  border-radius: 4px;\r\n  padding: 48px 40px;\r\n}\r\n.form h2{\r\n   font-size: 40px;\r\n   margin-bottom: 48px;\r\n}\r\n.form input{\r\n  display: block;\r\n  width: 100%;\r\n  margin: 2px 0 24px 0;\r\n  padding: 16px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  background-color: #E7E5E5;\r\n}\r\n\r\n.form button{\r\n  width: 100%;\r\n  margin: 24px 0;\r\n  padding: 16px 40px;\r\n  border: none;\r\n  background-color: #A26769;\r\n  color: #fff;\r\n  font-weight: 700;\r\n  border-radius: 4px;\r\n  font-size: 16px;\r\n}\r\n.form p {\r\n  text-align: center;\r\n}\r\n\r\n\r\nimg{\r\n  width: 100%;\r\n  height: 600px;\r\n}", ""]);
+exports.push([module.i, ".container{\r\n  margin: 0 auto;\r\n  width: 90%;\r\n  height: 100vh;\r\n  display: flex;\r\n  flex-direction: row;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n.form {\r\n  width: 400px;\r\n  background-color: #fff;\r\n  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.10);\r\n  border-radius: 4px;\r\n  padding: 48px 40px;\r\n}\r\n.form h2{\r\n   font-size: 40px;\r\n   margin-bottom: 48px;\r\n}\r\n.form input{\r\n  display: block;\r\n  width: 100%;\r\n  margin: 2px 0 24px 0;\r\n  padding: 16px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  background-color: #E7E5E5;\r\n}\r\n.form button{\r\n  width: 100%;\r\n  margin: 24px 0;\r\n  padding: 16px 40px;\r\n  border: none;\r\n  background-color: #A26769;\r\n  color: #fff;\r\n  font-weight: 700;\r\n  border-radius: 4px;\r\n  font-size: 16px;\r\n}\r\n.form p {\r\n  text-align: center;\r\n}\r\n.imgLogin{\r\n  width: 500px;\r\n  margin-right: 80px;\r\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/frontend/src/pages/SignUp/styles.css":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/frontend/src/pages/SignUp/styles.css ***!
+  \*******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".container{\r\n  margin: 0 auto;\r\n  width: 90%;\r\n  height: 100vh;\r\n  display: flex;\r\n  flex-direction: row;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n.form {\r\n  width: 400px;\r\n  background-color: #fff;\r\n  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.10);\r\n  border-radius: 4px;\r\n  padding: 48px 40px;\r\n}\r\n.form h2{\r\n   font-size: 40px;\r\n   margin-bottom: 48px;\r\n}\r\n.form input{\r\n  display: block;\r\n  width: 100%;\r\n  margin: 2px 0 24px 0;\r\n  padding: 16px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  background-color: #E7E5E5;\r\n}\r\n.form button{\r\n  width: 100%;\r\n  margin: 24px 0;\r\n  padding: 16px 40px;\r\n  border: none;\r\n  background-color: #A26769;\r\n  color: #fff;\r\n  font-weight: 700;\r\n  border-radius: 4px;\r\n  font-size: 16px;\r\n}\r\n.form p {\r\n  text-align: center;\r\n}\r\n.imgRegister{\r\n  width: 600px;\r\n  height: auto;\r\n  margin-left: 80px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -37919,6 +37957,17 @@ function App() {
 
 /***/ }),
 
+/***/ "./resources/js/frontend/src/assets/home.svg":
+/*!***************************************************!*\
+  !*** ./resources/js/frontend/src/assets/home.svg ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/home.svg?ef77e42266e892c2cd7da7c2ee6a9c74";
+
+/***/ }),
+
 /***/ "./resources/js/frontend/src/assets/login.svg":
 /*!****************************************************!*\
   !*** ./resources/js/frontend/src/assets/login.svg ***!
@@ -37927,6 +37976,97 @@ function App() {
 /***/ (function(module, exports) {
 
 module.exports = "/images/login.svg?a2f3d99f08909c4ebd93269f1770714c";
+
+/***/ }),
+
+/***/ "./resources/js/frontend/src/assets/register.svg":
+/*!*******************************************************!*\
+  !*** ./resources/js/frontend/src/assets/register.svg ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/register.svg?ae3b53a494fda18692085b41f5674c80";
+
+/***/ }),
+
+/***/ "./resources/js/frontend/src/pages/Home/index.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/frontend/src/pages/Home/index.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
+/* harmony import */ var _assets_home_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/home.svg */ "./resources/js/frontend/src/assets/home.svg");
+/* harmony import */ var _assets_home_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_home_svg__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles.css */ "./resources/js/frontend/src/pages/Home/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+function Home() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+    className: "menu"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "RandPic"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: ""
+  }, "Generate")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/register"
+  }, "Sign Up")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    "class": "btn-signIn"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/login"
+  }, "Sign In")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
+    className: "container-home"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "content-home"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "The faster image Generator"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_2__["FiImage"], null), "Generate ramdom image")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "imgHome"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _assets_home_svg__WEBPACK_IMPORTED_MODULE_3___default.a,
+    alt: "Imagem ilustrativa"
+  }))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ }),
+
+/***/ "./resources/js/frontend/src/pages/Home/styles.css":
+/*!*********************************************************!*\
+  !*** ./resources/js/frontend/src/pages/Home/styles.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/postcss-loader/src??ref--6-2!./styles.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/frontend/src/pages/Home/styles.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -37949,7 +38089,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_4__);
 
 
- // import { Container } from './styles';
 
 
 
@@ -37957,7 +38096,9 @@ __webpack_require__.r(__webpack_exports__);
 function SignIn() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
     className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "imgLogin"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: _assets_login_svg__WEBPACK_IMPORTED_MODULE_3___default.a,
     alt: "Imagem ilustrativa"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -37965,7 +38106,7 @@ function SignIn() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     action: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sign In"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "E-mail"
+    htmlFor: "email"
   }, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     id: "email",
@@ -37978,7 +38119,9 @@ function SignIn() {
     name: "password"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit"
-  }, "Sign In ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_2__["FiLogIn"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Don't have an account?", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], null, " Sign up here")))));
+  }, "Sign In ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_2__["FiLogIn"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Don't have an account?", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/register"
+  }, " Sign up here")))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (SignIn);
@@ -38026,13 +38169,86 @@ if(false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
- // import { Container } from './styles';
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.css */ "./resources/js/frontend/src/pages/SignUp/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _assets_register_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/register.svg */ "./resources/js/frontend/src/assets/register.svg");
+/* harmony import */ var _assets_register_svg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_register_svg__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
 
 function SignUp() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "SignUp");
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
+    className: "container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    action: "#"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sign Up"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "name"
+  }, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    id: "name",
+    name: "name"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "email"
+  }, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    id: "email",
+    name: "email"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "password"
+  }, "Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    id: "password",
+    name: "password"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "submit"
+  }, "Sign Up ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_2__["FiLogIn"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Have an account?", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/"
+  }, " Sign in here")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "imgRegister"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _assets_register_svg__WEBPACK_IMPORTED_MODULE_4___default.a,
+    alt: "Imagem ilustrativa"
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (SignUp);
+
+/***/ }),
+
+/***/ "./resources/js/frontend/src/pages/SignUp/styles.css":
+/*!***********************************************************!*\
+  !*** ./resources/js/frontend/src/pages/SignUp/styles.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/postcss-loader/src??ref--6-2!./styles.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/frontend/src/pages/SignUp/styles.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -38051,6 +38267,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _pages_SignIn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/SignIn */ "./resources/js/frontend/src/pages/SignIn/index.js");
 /* harmony import */ var _pages_SignUp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/SignUp */ "./resources/js/frontend/src/pages/SignUp/index.js");
+/* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/Home */ "./resources/js/frontend/src/pages/Home/index.js");
+
 
 
 
@@ -38059,11 +38277,15 @@ function Routes() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
-    component: _pages_SignIn__WEBPACK_IMPORTED_MODULE_2__["default"]
+    component: _pages_Home__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/register",
     component: _pages_SignUp__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/login",
+    component: _pages_SignIn__WEBPACK_IMPORTED_MODULE_2__["default"]
   })));
 }
 
@@ -38080,7 +38302,7 @@ function Routes() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');\n  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');\n\n  * {\n    margin: 0;\n    padding: 0;\n    outline: 0;\n    box-sizing: border-box;\n  }\n  *:focus {\n    outline: 0;\n  }\n  html, body, #root {\n    height: 100% !important;\n  }\n  body {\n    text-rendering: optimizeLegibility;\n    -webkit-font-smoothing: antialiased;\n  }\n  body, button, input {\n    font-size: 14px;\n    font-family: Roboto, Arial, Helvetica, sans-serif;\n  }\n  h1, h2, h3, h4, h5, h6 {\n    font-family: Ubuntu, Arial, Helvetica, sans-serif;\n  }\n  h1 {\n    font-size: 32px;\n  }\n  a {\n    text-decoration: none;\n  }\n  ul {\n    list-style: none;\n  }\n  button {\n    cursor: pointer;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');\n  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');\n\n  * {\n    margin: 0;\n    padding: 0;\n    outline: 0;\n    box-sizing: border-box;\n  }\n  *:focus {\n    outline: 0;\n  }\n  html, body, #root {\n    height: 100% !important;\n  }\n  body {\n    text-rendering: optimizeLegibility;\n    -webkit-font-smoothing: antialiased;\n    background-color: #f9f9f9;\n  }\n  body, button, input {\n    font-size: 14px;\n    font-family: Roboto, Arial, Helvetica, sans-serif;\n  }\n  h1, h2, h3, h4, h5, h6 {\n    font-family: Ubuntu, Arial, Helvetica, sans-serif;\n  }\n  h1 {\n    font-size: 32px;\n  }\n  a {\n    text-decoration: none;\n  }\n  ul {\n    list-style: none;\n  }\n  button {\n    cursor: pointer;\n    border: none;\n    border-radius: 4px;\n  }\n  img {\n    width: 100%;\n  }\n  \n"]);
 
   _templateObject = function _templateObject() {
     return data;
