@@ -19,6 +19,7 @@ export default createGlobalStyle`
   body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    background-color: #f9f9f9;
   }
   body, button, input {
     font-size: 14px;
@@ -38,5 +39,11 @@ export default createGlobalStyle`
   }
   button {
     cursor: pointer;
+    border: none;
+    border-radius: 4px;
   }
+  img {
+    width: 100%;
+  }
+  
 `;
