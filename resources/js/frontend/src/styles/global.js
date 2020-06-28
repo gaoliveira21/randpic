@@ -27,6 +27,9 @@ export default createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-family: Ubuntu, Arial, Helvetica, sans-serif;
   }
+  h1 {
+    font-size: 32px;
+  }
   a {
     text-decoration: none;
   }
