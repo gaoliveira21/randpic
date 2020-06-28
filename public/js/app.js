@@ -35774,8 +35774,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/gabriel/PersonalProjects/randpic/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/gabriel/PersonalProjects/randpic/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\randpic\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\randpic\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
