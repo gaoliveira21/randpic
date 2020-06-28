@@ -19,6 +19,7 @@ export default createGlobalStyle`
   body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    background-color: #f9f9f9;
   }
   body, button, input {
     font-size: 14px;
@@ -26,6 +27,9 @@ export default createGlobalStyle`
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: Ubuntu, Arial, Helvetica, sans-serif;
+  }
+  h1 {
+    font-size: 32px;
   }
   a {
     text-decoration: none;
@@ -35,5 +39,11 @@ export default createGlobalStyle`
   }
   button {
     cursor: pointer;
+    border: none;
+    border-radius: 4px;
   }
+  img {
+    width: 100%;
+  }
+  
 `;
