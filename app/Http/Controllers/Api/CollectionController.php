@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Collection;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class UserController extends Controller
+class CollectionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,54 +29,46 @@ class UserController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
-
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:3',
-            'email' => 'required|email',
-            'password' => 'required|min:6|max:15'
         ]);
 
         if($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 400);
         }
 
-        ['email' => $email] = $request->all();
+        $userId = $request->attributes->get('loggedUserID');
+        $user = User::find($userId)->getAttributes();
+        $name = $request->only('name');
 
+        $collection = new Collection();
 
-        if(!User::where('email', $email)) {
-            return response()->json(['error' => 'User already exist'], 400);
-        }
+        $collection->name = $name;
+        $collection->user_id = $user;
+        $collection->save();
 
-        $user = User::create($request->all());
-
-        return response()->json($user, 201);
+        return response()->json([$collection], 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Collection  $collection
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request): JsonResponse
+    public function show(Collection $collection)
     {
-        $id = $request->attributes->get('loggedUserID');
-
-        if(!$user = User::find($id)) {
-            return response()->json(['error' => 'User not found'], 404);
-        }
-
-        return response()->json([$user->load('collections')]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Collection  $collection
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Collection $collection)
     {
         //
     }
@@ -83,10 +76,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Collection  $collection
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Collection $collection)
     {
         //
     }
