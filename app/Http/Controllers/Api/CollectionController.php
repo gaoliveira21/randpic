@@ -56,9 +56,18 @@ class CollectionController extends Controller
      * @param  \App\Models\Collection  $collection
      * @return \Illuminate\Http\Response
      */
-    public function show(Collection $collection)
+    public function show(Request $request, int $id): JsonResponse
     {
-        //
+        $collection = Collection::find($id);
+        $userId = $request->attributes->get('loggedUserID');
+
+        if(!$collection)
+            return response()->json(['error' => 'Collection not found'], 404);
+
+        if($userId !== $collection->user->id) 
+            return response()->json(['error' => 'This user does not have permission to do this operation'], 403);
+        
+        return response()->json($collection, 200);
     }
 
     /**
@@ -79,8 +88,19 @@ class CollectionController extends Controller
      * @param  \App\Models\Collection  $collection
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Collection $collection)
+    public function destroy(Request $request, int $id): JsonResponse
     {
-        //
+        $collection = Collection::find($id);
+        $userId = $request->attributes->get('loggedUserID');
+
+        if(!$collection)
+            return response()->json(['error' => 'Collection not found'], 404);
+
+        if($userId !== $collection->user->id) 
+            return response()->json(['error' => 'This user does not have permission to do this operation'], 403);
+
+        $collection->delete();
+
+        return response()->json([], 204);
     }
 }
