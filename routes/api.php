@@ -23,6 +23,8 @@ Route::group([
 	Route::group([
 		'middleware' => 'jwt.verify'
 	], function () {
-		Route::get('/user', 'UserController@show')->name('user.show');		
+		Route::get('/user', 'UserController@show')->name('user.show');
+		Route::post('/collections', 'CollectionController@store')->name('collection.store');
+		Route::get('/collections', 'CollectionController@index')->name('collection.index');
 	});
 });
