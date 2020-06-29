@@ -65,7 +65,7 @@ class UserController extends Controller
             return response()->json(['error' => 'User not found'], 404);
         }
 
-        return response()->json([$user->load('collections')]);
+        return response()->json($user->load('collections'));
     }
 
     /**

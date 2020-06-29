@@ -17,6 +17,6 @@ class Collection extends Model
 
     public function user()
     {
-    	return $this->belongsTo('User')->withDefault();
+    	return $this->belongsTo('App\Models\User')->withDefault();
     }
 }
