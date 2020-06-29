@@ -15,9 +15,11 @@ class CollectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request): JsonResponse
     {
-        //
+        $userId = $request->attributes->get('loggedUserID');
+        $collections = Collection::where('user_id', $userId);
+        return response()->json($collections->orderBy('name', 'asc')->get(), 200);
     }
 
     /**
@@ -45,7 +47,7 @@ class CollectionController extends Controller
 
         $collection = Collection::create(['name' => $name, 'user_id' => $userId]);
 
-        return response()->json([$collection], 201);
+        return response()->json($collection, 201);
     }
 
     /**
