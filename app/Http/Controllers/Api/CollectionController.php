@@ -77,9 +77,33 @@ class CollectionController extends Controller
      * @param  \App\Models\Collection  $collection
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Collection $collection)
+    public function update(Request $request, int $id): JsonResponse
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:3',
+        ]);
+
+        if($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 400);
+        }
+
+        $collection = Collection::find($id);
+        $userId = $request->attributes->get('loggedUserID');
+        $name = $request->name;
+
+        if(!$collection)
+            return response()->json(['error' => 'Collection not found'], 404);
+
+        if($userId !== $collection->user->id) 
+            return response()->json(['error' => 'This user does not have permission to do this operation'], 403);
+        
+        if(Collection::where(['user_id' => $userId, 'name' => $name])->first())
+            return response()->json(['error' => 'Collection already exists'], 400);
+
+        $collection->name = $name;
+        $collection->save();
+
+        return response()->json($collection, 200);
     }
 
     /**

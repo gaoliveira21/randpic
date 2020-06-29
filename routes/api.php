@@ -28,6 +28,7 @@ Route::group([
 		Route::post('/collections', 'CollectionController@store')->name('collection.store');
 		Route::get('/collections', 'CollectionController@index')->name('collection.index');
 		Route::get('/collections/{id}', 'CollectionController@show')->name('collection.show');
+		Route::put('/collections/{id}', 'CollectionController@update')->name('collection.update');
 		Route::delete('/collections/{id}', 'CollectionController@destroy')->name('collection.delete');
 	});
 });
