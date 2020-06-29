@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Collection;
-use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -38,14 +37,13 @@ class CollectionController extends Controller
         }
 
         $userId = $request->attributes->get('loggedUserID');
-        $user = User::find($userId)->getAttributes();
-        $name = $request->only('name');
+        $name = $request->name;
 
-        $collection = new Collection();
+        if(Collection::where(['user_id' => $userId, 'name' => $name])->first()) {
+            return response()->json(['error' => 'Collection already exists'], 400);
+        }
 
-        $collection->name = $name;
-        $collection->user_id = $user;
-        $collection->save();
+        $collection = Collection::create(['name' => $name, 'user_id' => $userId]);
 
         return response()->json([$collection], 201);
     }
