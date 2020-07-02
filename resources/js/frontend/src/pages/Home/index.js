@@ -13,7 +13,7 @@ function Home() {
         <nav className="menu">
           <h1>RandPic</h1>
           <ul>
-            <li><Link to="">Generate</Link></li>
+            <li><Link to="/imagesList">Generate</Link></li>
             <li><Link to="/register">Sign Up</Link></li>
             <li><button class="btn-signIn"><Link to="/login">Sign In</Link></button></li>
           </ul>
@@ -27,7 +27,7 @@ function Home() {
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
           nisi ut aliquip ex ea commodo consequat.
           </p>
-          <button><FiImage></FiImage>Generate ramdom image</button>
+          <button><FiImage></FiImage><Link to="/imagesList">Generate ramdom image</Link></button>
         </div>
         <div class="imgHome">
           <img src={home} alt="Imagem ilustrativa" />
