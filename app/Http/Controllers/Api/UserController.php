@@ -65,7 +65,7 @@ class UserController extends Controller
             return response()->json(['error' => 'User not found'], 404);
         }
 
-        return response()->json([$user]);
+        return response()->json($user->load('collections'));
     }
 
     /**
@@ -80,14 +80,4 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $user)
-    {
-        //
-    }
 }

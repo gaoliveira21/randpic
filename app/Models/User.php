@@ -59,4 +59,9 @@ class User extends Authenticatable implements JWTSubject
         });
     }
 
+    public function collections() 
+    {
+        return $this->hasMany('App\Models\Collection');
+    }
+
 }
