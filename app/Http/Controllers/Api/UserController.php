@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -28,16 +29,17 @@ class UserController extends Controller
             return response()->json(['errors' => $validator->errors()], 400);
         }
 
-        ['email' => $email] = $request->all();
+        ['email' => $email, 'password' => $decryptedPassword] = $request->all();
 
-
-        if(!User::where('email', $email)) {
+        if(User::where('email', $email)->get()->first()) {
             return response()->json(['error' => 'User already exist'], 400);
         }
 
         $user = User::create($request->all());
 
-        return response()->json($user, 201);
+        $token = auth()->attempt(['email' => $user->email, 'password' => $decryptedPassword]);
+
+        return response()->json(['user' => $user, 'access_token' => $token], 201);
     }
 
     /**
