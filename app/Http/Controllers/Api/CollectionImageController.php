@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\CollectionImage;
+use App\Models\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -31,14 +32,26 @@ class CollectionImageController extends Controller
         $validator = Validator::make($request->all(), [
             'image_id' => 'required|numeric|min:1',
             'grayscale' => 'boolean',
-            'blur' => 'numeric|min:1|max:5'
+            'blur' => 'numeric|min:0|max:5'
         ]);
 
         if($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 400);
         }
 
-        return response()->json([], 201);
+        if(!$collection = Collection::find($id)) {
+            return response()->json(['error' => 'Collection not found'], 400);
+        }
+
+        if($collection->user_id !== $request->attributes->get('loggedUserID')) {
+            return response()->json(['error' => 'This user does not have permission to do this operation'], 403);
+        }
+
+        $data = array_merge($request->all(), ['collection_id' => $id]);
+
+        $collectionImage = CollectionImage::create($data);
+
+        return response()->json($collectionImage, 201);
     }
 
     /**
