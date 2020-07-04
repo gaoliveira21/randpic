@@ -11,16 +11,6 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -28,7 +18,6 @@ class UserController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
-
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:3',
             'email' => 'required|email',
@@ -75,9 +64,27 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request): JsonResponse
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'min:3',
+            'email' => 'email',
+        ]);
+
+        if($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 400);
+        }
+
+        $userId = $request->attributes->get('loggedUserID');
+        $user = User::find($userId);
+
+        if(!$request->all()){
+            return response()->json(['error' => 'No body sent'], 400);
+        }
+
+        $user->update($request->all());
+
+        return response()->json($user->load('collections'), 200);
     }
 
 }
