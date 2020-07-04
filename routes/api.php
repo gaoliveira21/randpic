@@ -31,5 +31,8 @@ Route::group([
 		Route::get('/collections/{id}', 'CollectionController@show')->name('collection.show');
 		Route::put('/collections/{id}', 'CollectionController@update')->name('collection.update');
 		Route::delete('/collections/{id}', 'CollectionController@destroy')->name('collection.delete');
+
+		Route::post('/downloads', 'DownloadController@store')->name('download.store');
+		Route::get('/downloads', 'DownloadController@index')->name('download.index');
 	});
 });
