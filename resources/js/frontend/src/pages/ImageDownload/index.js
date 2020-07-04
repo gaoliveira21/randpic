@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Switch from 'react-switch';
-import { FiArrowLeft,FiDownload } from 'react-icons/fi';
+import { FiArrowLeft, FiArrowDown } from 'react-icons/fi';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 import Header from '../../components/Header';
@@ -10,9 +10,11 @@ import dog from '../../assets/dog.jpg';
 import './styles.css';
 
 function imageDownload() {
+  const [btnVisible, setBtnVisible] = useState(false);
+
   return (
     <>
-      <Header/>
+      <Header />
       <div className="title">
         <Link to="/imagesList"><FiArrowLeft />Voltar</Link>
         <h1>Nome da Imagem</h1>
@@ -56,11 +58,31 @@ function imageDownload() {
             </select>
           </div>
           <div className="dropdown">
-            <button className="dropbtn">Download<FiDownload size={18}/></button>
-            <div id="myDropdown" className="dropdown-content">
-              <a href="#home">Home</a>
-              <a href="#about">About</a>
-              <a href="#contact">Contact</a>
+            <button className="dropbtn" onClick={() => setBtnVisible(!btnVisible)}>Download<FiArrowDown size={18} /></button>
+            <div id="myDropdown" className={btnVisible ? "dropdown-content show" : "dropdown-content"}>
+              <div>
+                <input type="radio" name="img-download" value="original" id="original" />
+                <label htmlFor="original"><strong>Original </strong>(5184 x 3888)</label>
+              </div>
+              <hr/>
+              <div>
+                <input type="radio" name="img-download" value="1" id="big" />
+                <label htmlFor="big"><strong>Grande </strong>(1920 x 1440)</label>
+              </div>
+              <hr/>
+              <div>
+                <input type="radio" name="img-download" value="medium" id="medium" />
+                <label htmlFor="medium"><strong>Medium </strong>(1280 x 960)</label>
+              </div>
+              <hr/>
+              <div>
+                <input type="radio" name="img-download" value="little" id="little" />
+                <label htmlFor="little"><strong>Little </strong>(1280 x 960)</label>
+              </div>
+              <hr/>
+              <div class="btn-download">
+                <button>Download Free</button>
+              </div>
             </div>
           </div>
         </section>

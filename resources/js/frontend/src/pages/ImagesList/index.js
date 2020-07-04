@@ -33,7 +33,43 @@ function ImagesList() {
                 <span><FaRegHeart/></span>
               </div>
             </div>
-          </div>
+            <div className="grid-item">
+              <div className="card-image hoverzoom">
+                <img src={dog} alt="" className="grid-item-image" />
+                  <Link to="/imagedownload" className="retina"><FiDownload size={20}/>Baixar imagem</Link>
+              </div>
+              <div className='card-description'>
+                <div className="card-text">
+                  <h3>Dogs</h3>
+                </div>
+                <span><FaRegHeart/></span>
+              </div>
+            </div>
+            <div className="grid-item">
+              <div className="card-image hoverzoom">
+                <img src={dog} alt="" className="grid-item-image" />
+                  <Link to="/imagedownload" className="retina"><FiDownload size={20}/>Baixar imagem</Link>
+              </div>
+              <div className='card-description'>
+                <div className="card-text">
+                  <h3>Dogs</h3>
+                </div>
+                <span><FaRegHeart/></span>
+              </div>
+            </div>
+            <div className="grid-item">
+              <div className="card-image hoverzoom">
+                <img src={dog} alt="" className="grid-item-image" />
+                  <Link to="/imagedownload" className="retina"><FiDownload size={20}/>Baixar imagem</Link>
+              </div>
+              <div className='card-description'>
+                <div className="card-text">
+                  <h3>Dogs</h3>
+                </div>
+                <span><FaRegHeart/></span>
+              </div>
+            </div>
+          </div>  
         </section>
 
       <section className="filters">
