@@ -16,9 +16,16 @@ class CollectionImageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, int $id)
     {
-        //
+        $userId = $request->attributes->get('loggedUserID');
+        $collection = Collection::find($id);
+
+        if($collection->user_id !== $userId) {
+            return response()->json(['error' => 'This user does not have permission to do this operation'], 403);
+        }
+
+        return response()->json($collection->images, 200);
     }
 
     /**
