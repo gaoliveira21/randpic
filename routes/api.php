@@ -32,6 +32,8 @@ Route::group([
 		Route::put('/collections/{id}', 'CollectionController@update')->name('collection.update');
 		Route::delete('/collections/{id}', 'CollectionController@destroy')->name('collection.delete');
 
+		Route::post('/collections/{id}/images', 'CollectionImageController@store')->name('collections_images.store');
+
 		Route::post('/downloads', 'DownloadController@store')->name('download.store');
 		Route::get('/downloads', 'DownloadController@index')->name('download.index');
 	});

@@ -19,4 +19,9 @@ class Collection extends Model
     {
     	return $this->belongsTo('App\Models\User')->withDefault();
     }
+
+    public function images() 
+    {
+        return $this->hasMany('App\Models\CollectionImage');
+    }
 }
