@@ -18,8 +18,8 @@ class CollectionController extends Controller
     public function index(Request $request): JsonResponse
     {
         $userId = $request->attributes->get('loggedUserID');
-        $collections = Collection::where('user_id', $userId);
-        return response()->json($collections->orderBy('name', 'asc')->get(), 200);
+        $collections = Collection::where('user_id', $userId)->orderBy('name', 'asc')->get();
+        return response()->json($collections, 200);
     }
 
     /**
@@ -67,7 +67,7 @@ class CollectionController extends Controller
         if($userId !== $collection->user->id) 
             return response()->json(['error' => 'This user does not have permission to do this operation'], 403);
         
-        return response()->json($collection, 200);
+        return response()->json($collection->load('images'), 200);
     }
 
     /**
