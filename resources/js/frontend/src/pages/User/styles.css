@@ -1,0 +1,46 @@
+.container-user{
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 48px;
+}
+.container-user section{
+  padding: 48px 0;
+  width: 100%;
+}
+.container-user section h1 {
+  padding: 24px 0;
+}
+.form-user{
+  width: 100%;
+}
+.form-user div label{
+  display: block;
+}
+.form-user div input{
+  display: block;
+  width: 100%;
+  margin: 2px 0 24px 0;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #E7E5E5;
+  font-size: 16px;
+}
+.button {
+  text-align: end;
+}
+.button button {
+  padding: 12px 48px;
+  background-color: #A26769;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+.button button svg {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 8px;
+}

@@ -22,58 +22,22 @@ function ImagesList() {
           <ul>
             <li><Link to="/imagesList">Generate</Link></li>
             <li><Link to="/register">Sign Up</Link></li>
-            <li><button class="btn-signIn"><Link to="/login">Sign In</Link></button></li>
+            <li><button className="btn-signIn"><Link to="/login">Sign In</Link></button></li>
           </ul>
         </nav>
       </header>
-      <h2 class="title-imagesList">We chose these images for you</h2>
+      <h2 className="title-imagesList">We chose these images for you</h2>
       <main className="container-imagesList">
 
-        <section class="content-imagesList">
-          <div class="grid-imagesList">
+        <section className="content-imagesList">
+          <div className="grid-imagesList">
             <div className="grid-item">
               <div className="card-image hoverzoom">
                 <img src={dog} alt="" className="grid-item-image" />
-                  <Link to="" class="retina"><FiDownload size={20}/>Baixar imagem</Link>
+                  <Link to="/imagedownload" className="retina"><FiDownload size={20}/>Baixar imagem</Link>
               </div>
-              <div class='card-description'>
-                <div class="card-text">
-                  <h3>Dogs</h3>
-                </div>
-                <span><FaRegHeart/></span>
-              </div>
-            </div>
-            <div className="grid-item">
-              <div className="card-image hoverzoom">
-                <img src={dog} alt="" className="grid-item-image" />
-                  <Link to="" class="retina"><FiDownload size={20}/>Baixar imagem</Link>
-              </div>
-              <div class='card-description'>
-                <div class="card-text">
-                  <h3>Dogs</h3>
-                </div>
-                <span><FaRegHeart/></span>
-              </div>
-            </div>
-            <div className="grid-item">
-              <div className="card-image hoverzoom">
-                <img src={dog} alt="" className="grid-item-image" />
-                  <Link to="" class="retina"><FiDownload size={20}/>Baixar imagem</Link>
-              </div>
-              <div class='card-description'>
-                <div class="card-text">
-                  <h3>Dogs</h3>
-                </div>
-                <span><FaRegHeart/></span>
-              </div>
-            </div>
-            <div className="grid-item">
-              <div className="card-image hoverzoom">
-                <img src={dog} alt="" className="grid-item-image" />
-                  <Link to="" class="retina"><FiDownload size={20}/>Baixar imagem</Link>
-              </div>
-              <div class='card-description'>
-                <div class="card-text">
+              <div className='card-description'>
+                <div className="card-text">
                   <h3>Dogs</h3>
                 </div>
                 <span><FaRegHeart/></span>
@@ -82,9 +46,9 @@ function ImagesList() {
           </div>
         </section>
 
-      <div class="filters">
+      <section className="filters">
         <h2>Filters</h2>
-        <div class="grayscale-filter">
+        <div className="grayscale-filter">
           <h4>Grayscale</h4>
           <Switch
             onChange={() => {}}
@@ -98,7 +62,7 @@ function ImagesList() {
             onHandleColor={'#A26769'}
           ></Switch>
         </div>
-        <div class="blur-filter">
+        <div className="blur-filter">
           <h4>Blur</h4>
           <select name="blur" id="blur">
             <option value="0">0</option>
@@ -114,7 +78,7 @@ function ImagesList() {
             <option value="10">10</option>
           </select>
           </div>
-        <div class="limit-filter">
+        <div className="limit-filter">
           <h4>Limit</h4>
           <select name="limit" id="limit">
             <option value="0">4</option>
@@ -123,7 +87,7 @@ function ImagesList() {
           </select>
         </div>
         <button><FiImage></FiImage><Link to="/imagesList">Generate ramdom image</Link></button>
-      </div>
+      </section>
 
       
 

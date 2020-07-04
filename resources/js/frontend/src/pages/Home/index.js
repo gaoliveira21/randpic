@@ -15,12 +15,12 @@ function Home() {
           <ul>
             <li><Link to="/imagesList">Generate</Link></li>
             <li><Link to="/register">Sign Up</Link></li>
-            <li><button class="btn-signIn"><Link to="/login">Sign In</Link></button></li>
+            <li><button className="btn-signIn"><Link to="/login">Sign In</Link></button></li>
           </ul>
         </nav>
       </header>
       <main className="container-home">
-        <div class="content-home">
+        <div className="content-home">
           <h2>The faster image Generator</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -29,7 +29,7 @@ function Home() {
           </p>
           <button><FiImage></FiImage><Link to="/imagesList">Generate ramdom image</Link></button>
         </div>
-        <div class="imgHome">
+        <div className="imgHome">
           <img src={home} alt="Imagem ilustrativa" />
         </div>
       </main>

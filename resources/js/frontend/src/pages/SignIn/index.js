@@ -8,7 +8,7 @@ import './styles.css';
 function SignIn() {
   return (
     <main className="container">
-      <div class="imgLogin">
+      <div className="imgLogin">
         <img src={login} alt="Imagem ilustrativa" />
       </div>
       <div className="form">

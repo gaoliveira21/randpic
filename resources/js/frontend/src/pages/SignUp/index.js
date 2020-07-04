@@ -19,11 +19,11 @@ function SignUp() {
           <label htmlFor="password">Password</label>
           <input type="text" id="password" name="password" />
           <button type="submit">Sign Up <FiLogIn></FiLogIn></button>
-          <p>Have an account?<Link to="/"> Sign in here</Link>
+          <p>Have an account?<Link to="/login"> Sign in here</Link>
           </p>
         </form>
       </div>
-      <div class="imgRegister">
+      <div className="imgRegister">
         <img src={register} alt="Imagem ilustrativa" />
       </div>
     </main>
