@@ -2,21 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiEdit } from 'react-icons/fi';
 
+import Header from '../../components/Header';
 import './styles.css';
 
 function User() {
   return (
     <>
-      <header>
-        <nav className="menu">
-          <h1>RandPic</h1>
-          <ul>
-            <li><Link to="/imagesList">Generate</Link></li>
-            <li><Link to="/register">Sign Up</Link></li>
-            <li><button className="btn-signIn"><Link to="/login">Sign In</Link></button></li>
-          </ul>
-        </nav>
-      </header>
+      <Header></Header>
       <main className="container-user">
         <section>
           <h1>Perfil</h1>

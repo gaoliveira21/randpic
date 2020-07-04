@@ -2,12 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
 
+import Header from '../../components/Header';
 import './styles.css';
 
 import register from '../../assets/register.svg';
 
 function SignUp() {
   return (
+    <>
+    <Header></Header>
     <main className="container">
       <div className="form">
         <form action="#">
@@ -27,6 +30,7 @@ function SignUp() {
         <img src={register} alt="Imagem ilustrativa" />
       </div>
     </main>
+    </>
   );
 }
 

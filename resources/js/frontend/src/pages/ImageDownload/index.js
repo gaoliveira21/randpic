@@ -4,6 +4,7 @@ import Switch from 'react-switch';
 import { FiArrowLeft,FiDownload } from 'react-icons/fi';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
+import Header from '../../components/Header';
 import dog from '../../assets/dog.jpg';
 
 import './styles.css';
@@ -11,16 +12,7 @@ import './styles.css';
 function imageDownload() {
   return (
     <>
-      <header>
-        <nav className="menu">
-          <h1>RandPic</h1>
-          <ul>
-            <li><Link to="/imagesList">Generate</Link></li>
-            <li><Link to="/register">Sign Up</Link></li>
-            <li><button className="btn-signIn"><Link to="/login">Sign In</Link></button></li>
-          </ul>
-        </nav>
-      </header>
+      <Header/>
       <div className="title">
         <Link to="/imagesList"><FiArrowLeft />Voltar</Link>
         <h1>Nome da Imagem</h1>

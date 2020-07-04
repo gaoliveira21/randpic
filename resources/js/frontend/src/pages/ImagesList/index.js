@@ -9,23 +9,13 @@ import dog2 from '../../assets/dog2.jpg';
 import dog3 from '../../assets/dog3.jpg';
 import dog4 from '../../assets/dog4.jpg';
 
-
+import Header from '../../components/Header';
 import './styles.css';
-
 
 function ImagesList() {
   return (
     <>
-      <header>
-        <nav className="menu">
-          <h1>RandPic</h1>
-          <ul>
-            <li><Link to="/imagesList">Generate</Link></li>
-            <li><Link to="/register">Sign Up</Link></li>
-            <li><button className="btn-signIn"><Link to="/login">Sign In</Link></button></li>
-          </ul>
-        </nav>
-      </header>
+     <Header></Header>
       <h2 className="title-imagesList">We chose these images for you</h2>
       <main className="container-imagesList">
 
