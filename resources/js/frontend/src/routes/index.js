@@ -8,6 +8,7 @@ import ImagesList from '../pages/ImagesList';
 import ImageDownload from '../pages/ImageDownload';
 import User from '../pages/User';
 import Collection from '../pages/Collection';
+import Downloads from '../pages/Downloads';
 
 export default function Routes() {
     return (
@@ -20,6 +21,7 @@ export default function Routes() {
                 <Route exact path="/imageDownload" component={ImageDownload} />
                 <Route exact path="/user" component={User} />
                 <Route exact path="/collection" component={Collection} />
+                <Route exact path="/downloads" component={Downloads} />
             </Switch>
         </BrowserRouter>
     );
