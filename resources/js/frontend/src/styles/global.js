@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'react-toastify/dist/ReactToastify.css';
+
 export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
@@ -81,6 +83,9 @@ export default createGlobalStyle`
 }
 .menu ul li button a{
   color: #fff;
+}
+.menu ul li button a svg {
+    margin-left: 8px;
 }
 
 /* Back Button */
