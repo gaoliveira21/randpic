@@ -54,6 +54,10 @@ class CollectionImageController extends Controller
             return response()->json(['error' => 'This user does not have permission to do this operation'], 403);
         }
 
+        if(CollectionImage::where(['collection_id' => $id, 'image_id' => $request->image_id])->first()) {
+            return response()->json(['error' => 'Image already in collection'], 400);
+        }
+
         $data = array_merge($request->all(), ['collection_id' => $id]);
 
         $collectionImage = CollectionImage::create($data);
