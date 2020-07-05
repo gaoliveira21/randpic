@@ -1,12 +1,27 @@
 import React, { createContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
+import api from '../services/api';
 
 const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
-    const [user, setUser] = useState({});
+    const history = useHistory();
+    const [user, setUser] = useState(null);
 
-    function signIn({ email, password }) {
-        console.log(email, password);
+    async function signIn({ email, password }) {
+        try {
+            const response = await api.post('/auth', {email, password});
+
+            const { token, user } = response.data;
+
+            api.defaults.headers.Authorization = `Bearer ${token}`;
+            setUser(user);
+            // history.push('/imagesList');
+        } catch (error) {
+            toast.error('Usuario não encontrado, e-mail e senha incorretos');
+        }
     }
 
     function signOut() {
@@ -14,7 +29,12 @@ export function AuthProvider({ children }) {
     }
 
     return (
-        <AuthContext.Provider value={{ signed: false, user, signIn, signOut }}>
+        <AuthContext.Provider value={{
+            signed: true,
+            user: { email: 'admin@mail.com', name: 'Admin' },
+            signIn,
+            signOut
+        }}>
             {children}
         </AuthContext.Provider>
     );

@@ -19,7 +19,7 @@ function SignIn() {
     const { signIn } = useContext(AuthContext);
 
     function handleSubmit(data) {
-        console.log(data);
+        signIn(data);
     }
 
     return (

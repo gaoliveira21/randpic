@@ -20,6 +20,10 @@ class AuthController extends Controller
 
         return response()->json([
             'access_token' => $token,
+            'user' => [
+                'email' => $credentials['email'],
+                'password' => $credentials['password']
+            ]
         ]);
 	}
 }
