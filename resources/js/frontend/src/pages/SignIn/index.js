@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
 import { Form, Input } from '@rocketseat/unform';
 import * as yup from 'yup';
@@ -17,9 +17,11 @@ const schema = yup.object().shape({
 
 function SignIn() {
     const { signIn } = useContext(AuthContext);
+    const history = useHistory();
 
     function handleSubmit(data) {
         signIn(data);
+        history.push('/imagesList');
     }
 
     return (
