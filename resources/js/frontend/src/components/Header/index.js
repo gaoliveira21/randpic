@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FiLogOut } from 'react-icons/fi';
 
@@ -6,7 +7,13 @@ import AuthContext from '../../contexts/auth';
 
 function Header() {
 
-    const { signed } = useContext(AuthContext);
+    const { signed, signOut } = useContext(AuthContext);
+    const history = useHistory();
+
+    function handleLogout() {
+        signOut();
+        history.push('/login');
+    }
 
     return (
         <header>
@@ -19,13 +26,21 @@ function Header() {
                             <li><Link to="/imagesList">Collections</Link></li>
                             <li><Link to="/imagesList">Downloads</Link></li>
                             <li><Link to="/imagesList">Profile</Link></li>
-                            <li><button><Link to="/login">Logout<FiLogOut/></Link></button></li>
+                            <li>
+                                <button onClick={handleLogout}>
+                                    <a href="#">Logout<FiLogOut /></a>
+                                </button>
+                            </li>
 
                         </>
                     ) : (
                             <>
                                 <li><Link to="/register">Sign Up</Link></li>
-                                <li><button><Link to="/login">Sign In</Link></button></li>
+                                <li>
+                                    <button>
+                                        <Link to="/login">Sign In</Link>
+                                    </button>
+                                </li>
                             </>
                         )}
                 </ul>

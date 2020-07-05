@@ -1,5 +1,4 @@
-import React, { createContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { createContext, useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 import api from '../services/api';
@@ -7,31 +6,45 @@ import api from '../services/api';
 const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
-    const history = useHistory();
     const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        (async function loadStorageData() {
+            const storagedUser = localStorage.getItem('@Randpic:user');
+            const storagedToken = localStorage.getItem('@Randpic:token');
+
+            if(storagedUser && storagedToken) {
+                setUser(JSON.parse(storagedUser));
+            }
+
+        })();
+    }, []);
 
     async function signIn({ email, password }) {
         try {
             const response = await api.post('/auth', {email, password});
 
-            const { token, user } = response.data;
+            const { access_token, user } = response.data;
 
-            api.defaults.headers.Authorization = `Bearer ${token}`;
+            api.defaults.headers.Authorization = `Bearer ${access_token}`;
             setUser(user);
-            // history.push('/imagesList');
+
+            localStorage.setItem('@Randpic:user', JSON.stringify(user));
+            localStorage.setItem('@Randpic:token', access_token);
         } catch (error) {
             toast.error('Usuario não encontrado, e-mail e senha incorretos');
         }
     }
 
     function signOut() {
-        console.log('Deslogar');
+        localStorage.clear();
+        setUser(null);
     }
 
     return (
         <AuthContext.Provider value={{
-            signed: true,
-            user: { email: 'admin@mail.com', name: 'Admin' },
+            signed: !!user,
+            user,
             signIn,
             signOut
         }}>
