@@ -84,6 +84,9 @@ export default createGlobalStyle`
 .menu ul li button a{
   color: #fff;
 }
+.menu ul li button a svg {
+    margin-left: 8px;
+}
 
 /* Back Button */
 .back-page{
