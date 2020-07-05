@@ -16,7 +16,7 @@ function imageDownload() {
     <>
       <Header />
       <div className="title">
-        <Link to="/imagesList"><FiArrowLeft />Voltar</Link>
+        <Link to="/imagesList" class="back-page"><FiArrowLeft />Voltar</Link>
         <h1>Nome da Imagem</h1>
         <h3>Nome completo do autor</h3>
       </div>

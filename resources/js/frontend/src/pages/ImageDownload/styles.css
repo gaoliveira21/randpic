@@ -9,17 +9,10 @@
   margin: 48px auto 24px auto;
   width: 90%;
 }
-.title a{
-  color: #A26769;
-  font-weight: 700;
-}
 .title h1{
   margin-top: 24px;
 }
-.title a svg{
-  margin-right: 8px;
-  font-weight: 700;
-}
+
 .content-imageDownload{
   width: 60%;
   display: flex;

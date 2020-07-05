@@ -82,4 +82,14 @@ export default createGlobalStyle`
 .menu ul li button a{
   color: #fff;
 }
+
+/* Back Button */
+.back-page{
+  color: #A26769;
+  font-weight: 700;
+}
+.back-page svg{
+  margin-right: 8px;
+  font-weight: 700;
+}
 `;
