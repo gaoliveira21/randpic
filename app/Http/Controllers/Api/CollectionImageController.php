@@ -16,7 +16,7 @@ class CollectionImageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, int $id)
+    public function index(Request $request, int $id): JsonResponse
     {
         $userId = $request->attributes->get('loggedUserID');
         $collection = Collection::find($id);
@@ -94,8 +94,25 @@ class CollectionImageController extends Controller
      * @param  \App\Models\CollectionImage  $collectionImage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CollectionImage $collectionImage)
+    public function destroy(Request $request, int $id, int $img_id): JsonResponse
     {
-        //
+        $collectionImage = CollectionImage::where(['collection_id' => $id, 'image_id' => $img_id])->first();
+        $collection = Collection::find($id);
+
+        if(!$collection) {
+            return response()->json(['error' => 'Collection not found'], 404);
+        }
+
+        if($collection->user_id !== $request->attributes->get('loggedUserID')) {
+            return response()->json(['error' => 'This user does not have permission to do this operation'], 403);
+        }
+
+        if(!$collectionImage) {
+            return response()->json(['error' => 'Image not found in collection'], 404);
+        }
+
+        $collectionImage->delete();
+
+        return response()->json([], 204);
     }
 }
