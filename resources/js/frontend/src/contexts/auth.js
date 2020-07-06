@@ -27,12 +27,15 @@ export function AuthProvider({ children }) {
             const { access_token, user } = response.data;
 
             api.defaults.headers.Authorization = `Bearer ${access_token}`;
-            setUser(user);
 
             localStorage.setItem('@Randpic:user', JSON.stringify(user));
             localStorage.setItem('@Randpic:token', access_token);
+
+            setUser(user);
+            return true;
         } catch (error) {
             toast.error('Usuario não encontrado, e-mail e senha incorretos');
+            return false;
         }
     }
 
