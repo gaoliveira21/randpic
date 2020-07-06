@@ -11,7 +11,7 @@ import './styles.css';
 
 function imageDownload() {
   const [btnVisible, setBtnVisible] = useState(false);
-
+  const [btnFavorite, setBtnFavorite] = useState(false);
   return (
     <>
       <Header />
@@ -57,6 +57,21 @@ function imageDownload() {
               <option value="10">10</option>
             </select>
           </div>
+          <div className="favorite">
+            {btnFavorite ?
+              (
+                <button className="btn-favorite-on" onClick={() => setBtnFavorite(false)}>
+                  Favorite <FaHeart size={16} />
+                </button>
+
+              ) :
+              (
+                <button className="btn-favorite-off" onClick={() => setBtnFavorite(true)}>
+                  Favorite <FaRegHeart size={16} />
+                </button>
+              )
+            }
+          </div>
           <div className="dropdown">
             <button className="dropbtn" onClick={() => setBtnVisible(!btnVisible)}>Download<FiArrowDown size={18} /></button>
             <div id="myDropdown" className={btnVisible ? "dropdown-content show" : "dropdown-content"}>
@@ -64,22 +79,22 @@ function imageDownload() {
                 <input type="radio" name="img-download" value="original" id="original" />
                 <label htmlFor="original"><strong>Original </strong>(5184 x 3888)</label>
               </div>
-              <hr/>
+              <hr />
               <div>
                 <input type="radio" name="img-download" value="1" id="big" />
                 <label htmlFor="big"><strong>Grande </strong>(1920 x 1440)</label>
               </div>
-              <hr/>
+              <hr />
               <div>
                 <input type="radio" name="img-download" value="medium" id="medium" />
                 <label htmlFor="medium"><strong>Medium </strong>(1280 x 960)</label>
               </div>
-              <hr/>
+              <hr />
               <div>
                 <input type="radio" name="img-download" value="little" id="little" />
                 <label htmlFor="little"><strong>Little </strong>(1280 x 960)</label>
               </div>
-              <hr/>
+              <hr />
               <div class="btn-download">
                 <button>Download Free</button>
               </div>

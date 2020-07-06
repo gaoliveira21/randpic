@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Switch from 'react-switch';
 import { FiImage, FiDownload } from 'react-icons/fi';
@@ -13,9 +13,12 @@ import Header from '../../components/Header';
 import './styles.css';
 
 function ImagesList() {
+
+  const [btnFavorite, setBtnFavorite] = useState(false);
+
   return (
     <>
-     <Header></Header>
+      <Header></Header>
       <h2 className="title-imagesList">We chose these images for you</h2>
       <main className="container-imagesList">
 
@@ -24,100 +27,79 @@ function ImagesList() {
             <div className="grid-item">
               <div className="card-image hoverzoom">
                 <img src={dog} alt="" className="grid-item-image" />
-                  <Link to="/imagedownload" className="retina"><FiDownload size={20}/>Baixar imagem</Link>
+                <Link to="/imagedownload" className="retina"><FiDownload size={20} />Baixar imagem</Link>
               </div>
               <div className='card-description'>
                 <div className="card-text">
                   <h3>Dogs</h3>
                 </div>
-                <span><FaRegHeart/></span>
-              </div>
-            </div>
-            <div className="grid-item">
-              <div className="card-image hoverzoom">
-                <img src={dog} alt="" className="grid-item-image" />
-                  <Link to="/imagedownload" className="retina"><FiDownload size={20}/>Baixar imagem</Link>
-              </div>
-              <div className='card-description'>
-                <div className="card-text">
-                  <h3>Dogs</h3>
+                <div className="card-favorite">
+                  {btnFavorite ?
+                    (
+                      <button className="btn-on" onClick={() => setBtnFavorite(false)}>
+                        <FaHeart size={16} />
+                      </button>
+
+                    ) :
+                    (
+                      <button className="btn-off" onClick={() => setBtnFavorite(true)}>
+                        <FaRegHeart size={16} />
+                      </button>
+                    )
+                  }
                 </div>
-                <span><FaRegHeart/></span>
               </div>
             </div>
-            <div className="grid-item">
-              <div className="card-image hoverzoom">
-                <img src={dog} alt="" className="grid-item-image" />
-                  <Link to="/imagedownload" className="retina"><FiDownload size={20}/>Baixar imagem</Link>
-              </div>
-              <div className='card-description'>
-                <div className="card-text">
-                  <h3>Dogs</h3>
-                </div>
-                <span><FaRegHeart/></span>
-              </div>
-            </div>
-            <div className="grid-item">
-              <div className="card-image hoverzoom">
-                <img src={dog} alt="" className="grid-item-image" />
-                  <Link to="/imagedownload" className="retina"><FiDownload size={20}/>Baixar imagem</Link>
-              </div>
-              <div className='card-description'>
-                <div className="card-text">
-                  <h3>Dogs</h3>
-                </div>
-                <span><FaRegHeart/></span>
-              </div>
-            </div>
-          </div>  
+
+          </div>
         </section>
 
-      <section className="filters">
-        <h2>Filters</h2>
-        <div className="grayscale-filter">
-          <h4>Grayscale</h4>
-          <Switch
-            onChange={() => {}}
-            checked={false}
-            height={20}
-            width={50}
-            handleDiameter={25}
-            offColor={'#E7E5E5'}
-            onColor={'#D5B9B2'}
-            offHandleColor={'#555555'}
-            onHandleColor={'#A26769'}
-          ></Switch>
-        </div>
-        <div className="blur-filter">
-          <h4>Blur</h4>
-          <select name="blur" id="blur">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
+        <section className="filters">
+          <h2>Filters</h2>
+          <div className="grayscale-filter">
+            <h4>Grayscale</h4>
+            <Switch
+              onChange={() => { }}
+              checked={false}
+              height={20}
+              width={50}
+              handleDiameter={25}
+              offColor={'#E7E5E5'}
+              onColor={'#D5B9B2'}
+              offHandleColor={'#555555'}
+              onHandleColor={'#A26769'}
+            ></Switch>
           </div>
-        <div className="limit-filter">
-          <h4>Limit</h4>
-          <select name="limit" id="limit">
-            <option value="0">4</option>
-            <option value="1">8</option>
-            <option value="2">12</option>
-          </select>
-        </div>
-        <button><FiImage></FiImage><Link to="/imagesList">Generate ramdom image</Link></button>
-      </section>
+          <div className="blur-filter">
+            <h4>Blur</h4>
+            <select name="blur" id="blur">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <div className="limit-filter">
+            <h4>Limit</h4>
+            <select name="limit" id="limit">
+              <option value="0">4</option>
+              <option value="1">8</option>
+              <option value="2">12</option>
+            </select>
+          </div>
+          <button><FiImage></FiImage><Link to="/imagesList">Generate ramdom image</Link></button>
+        </section>
 
-      
 
-    </main>
+
+      </main>
     </>
   );
 }

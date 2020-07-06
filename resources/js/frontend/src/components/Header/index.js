@@ -18,7 +18,7 @@ function Header() {
     return (
         <header>
             <nav className="menu">
-                <h1>RandPic</h1>
+                <Link to="/"><h1>RandPic</h1></Link>
                 <ul>
                     <li><Link to="/imagesList">Generate</Link></li>
                     {signed ? (

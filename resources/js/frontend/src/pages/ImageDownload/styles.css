@@ -42,6 +42,27 @@
   display: flex;
   flex-direction: column;
 }
+.favorite {
+  margin-top: 24px;
+}
+.btn-favorite-off{
+  text-align: center;
+  padding: 12px 24px;
+  background-color: transparent;
+  border: 1px solid #A26769;
+  border-radius: 4px;
+  color: #A26769;
+  font-weight: 700;
+}
+.btn-favorite-on{
+  text-align: center;
+  padding: 12px 24px;
+  background-color: #A26769;
+  border: 1px solid #A26769;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 700;
+}
 .dropdown {
   margin-top: 48px;
 }
