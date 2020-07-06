@@ -39,6 +39,25 @@ export function AuthProvider({ children }) {
         }
     }
 
+    async function signUp({ name, email, password }) {
+        try {
+            const response = await api.post('/users', {name, email, password});
+
+            const { access_token, user } = response.data;
+
+            api.defaults.headers.Authorization = `Bearer ${access_token}`;
+
+            localStorage.setItem('@Randpic:user', JSON.stringify(user));
+            localStorage.setItem('@Randpic:token', access_token);
+
+            setUser(user);
+            return true;
+        } catch (error) {
+            toast.error('Falha ao cadastrar usuário, tente novamente');
+            return false;
+        }
+    }
+
     function signOut() {
         localStorage.clear();
         setUser(null);
@@ -49,6 +68,7 @@ export function AuthProvider({ children }) {
             signed: !!user,
             user,
             signIn,
+            signUp,
             signOut
         }}>
             {children}
