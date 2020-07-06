@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -36,6 +37,10 @@ class UserController extends Controller
         }
 
         $user = User::create($request->all());
+        Collection::create([
+            'name' => 'Likes',
+            'user_id' => $user->id
+        ]);
 
         $token = auth()->attempt(['email' => $user->email, 'password' => $decryptedPassword]);
 
