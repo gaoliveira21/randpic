@@ -20,7 +20,7 @@ function SignIn() {
     const history = useHistory();
 
     async function handleSubmit(data) {
-        if(await signIn(data)){
+        if((await signIn(data))){
             history.push('/');
         }
     }
