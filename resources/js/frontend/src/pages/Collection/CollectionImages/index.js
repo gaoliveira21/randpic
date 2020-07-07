@@ -19,7 +19,7 @@ function CollectionImages() {
     <>
       <Header></Header>
       <main className="container-collection-images">
-        <Link onClick={backPage} class="back-page"><FiArrowLeft />Voltar</Link>
+        <span onClick={backPage} className="back-page"><FiArrowLeft />Voltar</span>
         <div className="title-collection-images">
           <h1>Favorites</h1>
         </div>
@@ -33,7 +33,7 @@ function CollectionImages() {
               <div className='card-description-collection-images'>
                 <div className="card-text-collection-images">
                   <h3>Dogs</h3>
-                </div> 
+                </div>
                 <div className="card-delete-collection-images">
                   <FiX size={24}/>
                 </div>
