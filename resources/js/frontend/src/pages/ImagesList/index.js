@@ -18,13 +18,13 @@ function ImagesList() {
     useEffect(() => {
         async function loadImages() {
             const imagesResponse = [];
-            for (let index = 1; index <= 10; index++) {
-              try {
-                const response = await api.get(`https://picsum.photos/id/${randomNumber(1, 1000)}/info`);
-                imagesResponse.push(response.data);
-              } catch (error) {
-                console.log(error);
-              }
+            for (let index = 1; index <= 6; index++) {
+                try {
+                    const response = await api.get(`https://picsum.photos/id/${randomNumber(1, 1000)}/info`);
+                    imagesResponse.push(response.data);
+                } catch (error) {
+                    console.log(error);
+                }
             }
             setImages(imagesResponse);
         }
@@ -38,9 +38,8 @@ function ImagesList() {
     return (
         <>
             <Header></Header>
-            <h2 className="title-imagesList">We chose these images for you</h2>
             <main className="container-imagesList">
-
+                <h1>We chose these images for you</h1>
                 <section className="content-imagesList">
                     <div className="grid-imagesList">
                         {images.map(image => (
@@ -71,14 +70,12 @@ function ImagesList() {
                                 </div>
                             </div>
                         ))}
-
                     </div>
                 </section>
 
-                <section className="filters">
-
+                {/* <section className="filters">
                     <button><FiImage></FiImage><Link to="/imagesList">Generate ramdom image</Link></button>
-                </section>
+                </section> */}
             </main>
         </>
     );
