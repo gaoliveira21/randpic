@@ -8,6 +8,12 @@ const AuthContext = createContext({});
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('@Randpic:user')));
 
+    useEffect(() => {
+        const storagedToken = localStorage.getItem('@Randpic:token');
+        if (storagedToken)
+            api.defaults.headers.Authorization = `Bearer ${storagedToken}`;
+    }, []);
+
     async function signIn({ email, password }) {
         try {
             const response = await api.post('/auth', { email, password });
@@ -22,7 +28,7 @@ export function AuthProvider({ children }) {
             setUser(user);
             return true;
         } catch (error) {
-            toast.error('Usuario não encontrado, e-mail e senha incorretos');
+            toast.error('Fails on login, was not found a user with this email and password');
             return false;
         }
     }
@@ -35,15 +41,13 @@ export function AuthProvider({ children }) {
 
             api.defaults.headers.Authorization = `Bearer ${access_token}`;
 
-            console.log(user);
-
             localStorage.setItem('@Randpic:user', JSON.stringify(user));
             localStorage.setItem('@Randpic:token', access_token);
 
             setUser(user);
             return true;
         } catch (error) {
-            toast.error('Falha ao cadastrar usuário, tente novamente');
+            toast.error('Fails on create user');
             return false;
         }
     }
@@ -53,13 +57,30 @@ export function AuthProvider({ children }) {
         setUser(null);
     }
 
+    async function editProfile({ name, email }) {
+        try {
+            const response = await api.put('/users', { name, email });
+            const { updated_at, created_at, id} = response.data;
+
+            const user = { name, email, id, updated_at, created_at };
+
+            localStorage.setItem('@Randpic:user', JSON.stringify(user));
+            setUser(user);
+
+            toast.success('Success on update profile');
+        } catch (error) {
+            toast.error('Fails on update profile');
+        }
+    }
+
     return (
         <AuthContext.Provider value={{
             signed: !!user,
             user,
             signIn,
             signUp,
-            signOut
+            signOut,
+            editProfile
         }}>
             {children}
         </AuthContext.Provider>
