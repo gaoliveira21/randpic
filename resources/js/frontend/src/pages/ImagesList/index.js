@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Switch from 'react-switch';
 import { FiImage, FiDownload } from 'react-icons/fi';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import randomNumber from '../../utils/randomNumber';
 
 import api from '../../services/api';
 
@@ -17,9 +18,13 @@ function ImagesList() {
     useEffect(() => {
         async function loadImages() {
             const imagesResponse = [];
-            for (let index = 1; index <= 100; index+=10) {
-                const response = await api.get(`https://picsum.photos/id/${index}/info`);
+            for (let index = 1; index <= 10; index++) {
+              try {
+                const response = await api.get(`https://picsum.photos/id/${randomNumber(1, 1000)}/info`);
                 imagesResponse.push(response.data);
+              } catch (error) {
+                console.log(error);
+              }
             }
             setImages(imagesResponse);
         }
@@ -41,12 +46,12 @@ function ImagesList() {
                         {images.map(image => (
                             <div key={image.id} className="grid-item">
                                 <div className="card-image hoverzoom">
-                                    <img src={`https://picsum.photos/id/${image.id}/200/300`} alt="" className="grid-item-image" />
+                                    <img src={image.download_url} alt="" className="grid-item-image" />
                                     <Link to="#" className="retina"><FiDownload size={20} />Baixar imagem</Link>
                                 </div>
                                 <div className='card-description'>
                                     <div className="card-text">
-                                        <h3>{image.author}</h3>
+                                        <h3>Imagem</h3>
                                     </div>
                                     <div className="card-favorite">
                                         {btnFavorite ?
@@ -71,45 +76,7 @@ function ImagesList() {
                 </section>
 
                 <section className="filters">
-                    <h2>Filters</h2>
-                    <div className="grayscale-filter">
-                        <h4>Grayscale</h4>
-                        <Switch
-                            onChange={() => { }}
-                            checked={false}
-                            height={20}
-                            width={50}
-                            handleDiameter={25}
-                            offColor={'#E7E5E5'}
-                            onColor={'#D5B9B2'}
-                            offHandleColor={'#555555'}
-                            onHandleColor={'#A26769'}
-                        ></Switch>
-                    </div>
-                    <div className="blur-filter">
-                        <h4>Blur</h4>
-                        <select name="blur" id="blur">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div className="limit-filter">
-                        <h4>Limit</h4>
-                        <select name="limit" id="limit">
-                            <option value="0">4</option>
-                            <option value="1">8</option>
-                            <option value="2">12</option>
-                        </select>
-                    </div>
+
                     <button><FiImage></FiImage><Link to="/imagesList">Generate ramdom image</Link></button>
                 </section>
             </main>
