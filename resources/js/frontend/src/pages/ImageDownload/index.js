@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Switch from 'react-switch';
 import { FiArrowLeft, FiArrowDown } from 'react-icons/fi';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
@@ -12,11 +12,17 @@ import './styles.css';
 function imageDownload() {
   const [btnVisible, setBtnVisible] = useState(false);
   const [btnFavorite, setBtnFavorite] = useState(false);
+
+  const history = useHistory();
+  function backPage(){
+    history.goBack();
+  }
+
   return (
     <>
       <Header />
       <div className="title">
-        <Link to="/imagesList" class="back-page"><FiArrowLeft />Voltar</Link>
+        <Link onClick={backPage} class="back-page"><FiArrowLeft />Voltar</Link>
         <h1>Nome da Imagem</h1>
         <h3>Nome completo do autor</h3>
       </div>

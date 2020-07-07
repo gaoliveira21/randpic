@@ -1,0 +1,37 @@
+.container-collection-images{
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 0;
+}
+.grid-collection-images{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 12px;
+}
+.title-collection-images {
+  margin-bottom: 24px;
+}
+.item-collection-images {
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+}
+.card-description-collection-images{
+  height: 48px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 18px;
+}
+.card-text-collection-images{
+  width:70%;
+  text-align: start;
+}
+.card-delete-collection-images{
+  width: 30%;
+  text-align: right;
+}
+.card-delete-collection-images svg{
+  color: #A26769;
+}

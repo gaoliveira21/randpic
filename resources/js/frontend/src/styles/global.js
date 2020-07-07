@@ -92,6 +92,7 @@ export default createGlobalStyle`
 .back-page{
   color: #A26769;
   font-weight: 700;
+  margin-bottom: 24px;
 }
 .back-page svg{
   margin-right: 8px;
