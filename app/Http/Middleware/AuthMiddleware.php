@@ -18,7 +18,6 @@ class AuthMiddleware extends BaseMiddleware
      */
     public function handle($request, Closure $next)
     {
-
         try {
             $user = JWTAuth::parseToken()->authenticate();
             $request->attributes->add(['loggedUserID' => $user->id]);

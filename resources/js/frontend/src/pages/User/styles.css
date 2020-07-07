@@ -15,13 +15,16 @@
 .form-user{
   width: 100%;
 }
+.form-user div {
+    margin-bottom: 10px;
+}
 .form-user div label{
   display: block;
 }
 .form-user div input{
   display: block;
   width: 100%;
-  margin: 2px 0 24px 0;
+  margin: 2px 0 0 0;
   padding: 16px;
   border: none;
   border-radius: 4px;
@@ -43,4 +46,9 @@
   font-size: 16px;
   font-weight: 700;
   margin-left: 8px;
+}
+
+span {
+    color: red;
+    font-weight: bold;
 }
