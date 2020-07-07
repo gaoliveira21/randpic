@@ -10,6 +10,8 @@ function RouteWrapper({
 }) {
     const { signed } = useContext(AuthContext);
 
+    console.log(signed);
+
     if(!signed && isPrivate) {
         return <Redirect to="/login" />
     }

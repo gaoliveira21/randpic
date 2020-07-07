@@ -19,9 +19,10 @@ function SignIn() {
     const { signIn } = useContext(AuthContext);
     const history = useHistory();
 
-    function handleSubmit(data) {
-        signIn(data);
-        history.push('/imagesList');
+    async function handleSubmit(data) {
+        if(await signIn(data)){
+            history.push('/');
+        }
     }
 
     return (

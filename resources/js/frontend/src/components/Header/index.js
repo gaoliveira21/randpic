@@ -23,9 +23,9 @@ function Header() {
                     <li><Link to="/imagesList">Generate</Link></li>
                     {signed ? (
                         <>
-                            <li><Link to="/imagesList">Collections</Link></li>
-                            <li><Link to="/imagesList">Downloads</Link></li>
-                            <li><Link to="/imagesList">Profile</Link></li>
+                            <li><Link to="/collection">Collections</Link></li>
+                            <li><Link to="/downloads">Downloads</Link></li>
+                            <li><Link to="/user">Profile</Link></li>
                             <li>
                                 <button onClick={handleLogout}>
                                     <a href="#">Logout<FiLogOut /></a>

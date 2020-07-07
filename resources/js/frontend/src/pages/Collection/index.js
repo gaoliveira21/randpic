@@ -44,42 +44,6 @@ function Collection() {
                 <span><FaRegHeart/></span>
               </div>
             </div>
-            <div className="collection-item">
-              <div className="card-image hoverzoom">
-                <img src={dog} alt="" className="collection-item-image" />
-                  <Link to="/imagedownload" className="retina"><FiDownload size={20}/>Baixar imagem</Link>
-              </div>
-              <div className='card-description'>
-                <div className="card-text">
-                  <h3>Dogs</h3>
-                </div>
-                <span><FaRegHeart/></span>
-              </div>
-            </div>
-            <div className="collection-item">
-              <div className="card-image hoverzoom">
-                <img src={dog} alt="" className="collection-item-image" />
-                  <Link to="/imagedownload" className="retina"><FiDownload size={20}/>Baixar imagem</Link>
-              </div>
-              <div className='card-description'>
-                <div className="card-text">
-                  <h3>Dogs</h3>
-                </div>
-                <span><FaRegHeart/></span>
-              </div>
-            </div>
-            <div className="collection-item">
-              <div className="card-image hoverzoom">
-                <img src={dog} alt="" className="collection-item-image" />
-                  <Link to="/imagedownload" className="retina"><FiDownload size={20}/>Baixar imagem</Link>
-              </div>
-              <div className='card-description'>
-                <div className="card-text">
-                  <h3>Dogs</h3>
-                </div>
-                <span><FaRegHeart/></span>
-              </div>
-            </div>
           </div>
         </section>
       </main>
