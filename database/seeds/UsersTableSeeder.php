@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         Collection::create([
-            'name' => 'Likes',
+            'name' => 'favorites',
             'user_id' => $user->id
         ]);
     }
