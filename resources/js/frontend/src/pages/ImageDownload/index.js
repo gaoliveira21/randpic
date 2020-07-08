@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Switch from 'react-switch';
 import { FiArrowLeft, FiArrowDown } from 'react-icons/fi';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
-import FileDownload from 'js-file-download';
 
 import api from '../../services/api';
+import AuthContext from '../../contexts/auth';
 import Header from '../../components/Header';
 
 import './styles.css';
@@ -14,11 +14,11 @@ function imageDownload({ location }) {
 
     const [url, setUrl] = useState(location.state.url);
     const [grayscale, setGrayscale] = useState(false);
-    const [btnVisible, setBtnVisible] = useState(false);
     const [btnFavorite, setBtnFavorite] = useState(false);
     const [download, setDownload] = useState('');
 
     const history = useHistory();
+    const { signed } = useContext(AuthContext);
 
     useEffect(() => {
         grayscale ? setUrl(`${url}?grayscale`) : setUrl(location.state.url);
@@ -37,7 +37,11 @@ function imageDownload({ location }) {
     }
 
     async function handleDownload() {
-        console.log(download, url);
+        if(signed) {
+            await api.post('/downloads', {
+                download_url: url
+            });
+        }
     }
 
     return (
@@ -85,32 +89,7 @@ function imageDownload({ location }) {
                         }
                     </div>
                     <div className="dropdown">
-                        <button className="dropbtn" onClick={() => setBtnVisible(!btnVisible)}>Download<FiArrowDown size={18} /></button>
-                        <div id="myDropdown" className={btnVisible ? "dropdown-content show" : "dropdown-content"}>
-                            <div>
-                                <input type="radio" name="img-download" value="original" id="original" />
-                                <label htmlFor="original"><strong>Original </strong>(5184 x 3888)</label>
-                            </div>
-                            <hr />
-                            <div>
-                                <input type="radio" name="img-download" value="1" id="big" />
-                                <label htmlFor="big"><strong>Grande </strong>(1920 x 1440)</label>
-                            </div>
-                            <hr />
-                            <div>
-                                <input type="radio" name="img-download" value="medium" id="medium" />
-                                <label htmlFor="medium"><strong>Medium </strong>(1280 x 960)</label>
-                            </div>
-                            <hr />
-                            <div>
-                                <input type="radio" name="img-download" value="little" id="little" />
-                                <label htmlFor="little"><strong>Little </strong>(1280 x 960)</label>
-                            </div>
-                            <hr />
-                            <div className="btn-download" onClick={handleDownload}>
-                                <a href={download} download>Download Free</a>
-                            </div>
-                        </div>
+                        <a href={download} download className="dropbtn" onClick={handleDownload}>Download<FiArrowDown size={18} /></a>
                     </div>
                 </section>
             </main>
