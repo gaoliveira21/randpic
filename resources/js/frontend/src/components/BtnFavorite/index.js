@@ -8,7 +8,6 @@ import './styles.css';
 import AuthContext from '../../contexts/auth';
 
 function BtnFavorite({ data }) {
-
     const [active, setActive] = useState(false);
 
     const { signed, token } = useContext(AuthContext);
@@ -22,11 +21,22 @@ function BtnFavorite({ data }) {
 
         const { id } = response.data.filter(res => res.name === "favorites")[0];
 
-        await api.post(`collections/${id}/images`, { image_id: data.id }, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            },
-        });
+        if (!active) {
+            await api.post(`collections/${id}/images`,
+                { image_id: data.id, download_url: data.download_url },
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    },
+                });
+        } else {
+            await api.delete(`/collections/${id}/images/${data.id}`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    },
+                });
+        }
 
         setActive(!active);
     }

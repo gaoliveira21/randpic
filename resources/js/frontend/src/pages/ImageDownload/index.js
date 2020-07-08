@@ -12,7 +12,7 @@ import BtnFavorite from '../../components/BtnFavorite';
 import './styles.css';
 
 function imageDownload({ location }) {
-
+    console.log(location);
     const [url, setUrl] = useState(location.state.url);
     const [grayscale, setGrayscale] = useState(false);
     const [download, setDownload] = useState('');
@@ -26,7 +26,6 @@ function imageDownload({ location }) {
 
     useEffect(() => {
         fetch(url).then(response => response.blob().then(blob => {
-            console.log(response);
             const downloadUrl = window.URL.createObjectURL(blob);
             setDownload(downloadUrl);
         }));

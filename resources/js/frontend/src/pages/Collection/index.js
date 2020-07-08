@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiDownload, FiImage } from 'react-icons/fi';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
@@ -13,6 +13,7 @@ function Collection() {
     const { token } = useContext(AuthContext);
 
     const [collections, setCollections] = useState([]);
+    const history = useHistory();
 
     useEffect(() => {
         async function loadCollections() {
@@ -26,6 +27,12 @@ function Collection() {
         loadCollections();
     }, []);
 
+    function handleNavigate(id) {
+        history.push('/collectionImages', {
+            collection_id: id,
+        });
+    }
+
     return (
         <>
             <Header></Header>
@@ -33,7 +40,7 @@ function Collection() {
                 <h1>Collections</h1>
                 <section className="grid-collection">
                     {collections.map(collection => (
-                        <Link key={collection.id} to="/collectionImages">
+                        <span key={collection.id} onClick={() => handleNavigate(collection.id)} >
                             <div className="card-collection">
                                 <div className="card-image-collection">
                                     <FiImage size={36} />
@@ -42,7 +49,7 @@ function Collection() {
                                     <h3>{collection.name}</h3>
                                 </div>
                             </div>
-                        </Link>
+                        </span>
                     ))}
                 </section>
             </main>
