@@ -1,6 +1,5 @@
 .btn-favorite-off{
   text-align: center;
-  padding: 16px 24px;
   background-color: transparent;
   border: 1px solid #A26769;
   border-radius: 4px;
@@ -11,7 +10,6 @@
 }
 .btn-favorite-on{
   text-align: center;
-  padding: 16px 24px;
   background-color: #A26769;
   border: 1px solid #A26769;
   border-radius: 4px;
