@@ -8,6 +8,7 @@ import randomNumber from '../../utils/randomNumber';
 import api from '../../services/api';
 
 import Header from '../../components/Header';
+import CardItem from '../../components/CardItem';
 import './styles.css';
 
 function ImagesList() {
@@ -32,54 +33,44 @@ function ImagesList() {
         loadImages();
     }, [])
 
-    function handleClickImage({ id, download_url }) {
-        history.push('/imageDownload', {
-            id,
-            url: download_url
-        })
-    }
+    // function handleClickImage({ id, download_url }) {
+    //     history.push('/imageDownload', {
+    //         id,
+    //         url: download_url
+    //     })
+    // }
 
     return (
         <>
             <Header></Header>
             <main className="container-imagesList">
                 <h1>We chose these images for you</h1>
-                <section className="content-imagesList">
+                <section>
                     <div className="grid-imagesList">
                         {images.map(image => (
-                            <div key={image.id} className="grid-item">
-                                <div className="card-image hoverzoom" onClick={() => handleClickImage(image)}>
-                                    <img src={image.download_url} alt="" className="grid-item-image" />
-                                    <Link to="#" className="retina"><FiDownload size={20} />Baixar imagem</Link>
-                                </div>
-                                <div className='card-description'>
-                                    <div className="card-text">
-                                        <h3>{image.author}</h3>
-                                    </div>
-                                    <div className="card-favorite">
-                                        {btnFavorite ?
-                                            (
-                                                <button className="btn-on" onClick={() => setBtnFavorite(false)}>
-                                                    <FaHeart size={16} />
-                                                </button>
-
-                                            ) :
-                                            (
-                                                <button className="btn-off" onClick={() => setBtnFavorite(true)}>
-                                                    <FaRegHeart size={16} />
-                                                </button>
-                                            )
-                                        }
-                                    </div>
-                                </div>
-                            </div>
+                            <CardItem
+                                key={image.id} 
+                                image={image}
+                                imageDownloadUrl={image.download_url} 
+                                imageAuthor={image.author}
+                            />
+                            // <div key={image.id} className="grid-item">
+                            //     <div className="card-image hoverzoom" onClick={() => handleClickImage(image)}>
+                            //         <img src={image.download_url} alt="" className="grid-item-image" />
+                            //         <Link to="#" className="retina"><FiDownload size={20} />Baixar imagem</Link>
+                            //     </div>
+                            //     <div className='card-description'>
+                            //         <div className="card-text">
+                            //             <h3>{image.author}</h3>
+                            //         </div>
+                            //         <div className="card-favorite">
+                            //           <BtnFavorite/>
+                            //         </div>
+                            //     </div>
+                            // </div>
                         ))}
                     </div>
                 </section>
-
-                {/* <section className="filters">
-                    <button><FiImage></FiImage><Link to="/imagesList">Generate ramdom image</Link></button>
-                </section> */}
             </main>
         </>
     );

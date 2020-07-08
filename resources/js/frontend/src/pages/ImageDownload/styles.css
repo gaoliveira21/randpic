@@ -12,7 +12,6 @@
 .title h1{
   margin-top: 24px;
 }
-
 .content-imageDownload{
   width: 60%;
   display: flex;
@@ -51,14 +50,16 @@
 .tool-imageDownload div{
   margin: 24px 0;
 }
-
 .btn-download {
   background-color: #A26769;
-  padding: 16px 24px;
+  padding: 16px 0;
   border: none;
   width: 100%;
   border-radius: 4px;
   text-align: center;
+}
+.favorite button {
+  padding: 16px 0;
 }
 .btn-download a {
   color: #FFF;
