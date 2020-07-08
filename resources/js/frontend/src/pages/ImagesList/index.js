@@ -20,7 +20,7 @@ function ImagesList() {
     useEffect(() => {
         async function loadImages() {
             const imagesResponse = [];
-            for (let index = 1; index <= 1; index++) {
+            for (let index = 1; index <= 6; index++) {
                 try {
                     const response = await api.get(`https://picsum.photos/id/${randomNumber(1, 1000)}/info`);
                     imagesResponse.push(response.data);
@@ -49,9 +49,9 @@ function ImagesList() {
                     <div className="grid-imagesList">
                         {images.map(image => (
                             <CardItem
-                                key={image.id} 
+                                key={image.id}
                                 image={image}
-                                imageDownloadUrl={image.download_url} 
+                                imageDownloadUrl={image.download_url}
                                 imageAuthor={image.author}
                             />
                             // <div key={image.id} className="grid-item">

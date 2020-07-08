@@ -1,22 +1,42 @@
 import React, { useState, useContext } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
+import api from '../../services/api';
+
 import './styles.css';
 
 import AuthContext from '../../contexts/auth';
 
-function BtnFavorite() {
+function BtnFavorite({ data }) {
 
     const [active, setActive] = useState(false);
 
-    const { signed } = useContext(AuthContext);
+    const { signed, token } = useContext(AuthContext);
+
+    async function handleClick() {
+        const response = await api.get('/collections', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+
+        const { id } = response.data.filter(res => res.name === "favorites")[0];
+
+        await api.post(`collections/${id}/images`, { image_id: data.id }, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+        });
+
+        setActive(!active);
+    }
 
     return (
 
         <>
             {
                 signed ? (
-                    <button onClick={() => setActive(!active)} className={active ? "btn-favorite-on" : "btn-favorite-off"}>
+                    <button onClick={handleClick} className={active ? "btn-favorite-on" : "btn-favorite-off"}>
                         Favorite <FaHeart size={16} />
                     </button>
                 ) : <></>
