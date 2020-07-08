@@ -7,23 +7,25 @@ import AuthContext from '../../contexts/auth';
 
 function BtnFavorite() {
 
-  const { signed } = useContext(AuthContext);
+    const [active, setActive] = useState(false);
 
-  return (
+    const { signed } = useContext(AuthContext);
 
-    <>
-    {
-      signed ? (
-        <button className="btn-favorite-off">
-          Favorite <FaHeart size={16} />
-        </button>
-      ) : <></>
-    }
-    </>
+    return (
 
-    // <button className="btn-favorite-off">
-    //   Favorite <FaRegHeart size={16} />
-    // </button>
-  );
+        <>
+            {
+                signed ? (
+                    <button onClick={() => setActive(!active)} className={active ? "btn-favorite-on" : "btn-favorite-off"}>
+                        Favorite <FaHeart size={16} />
+                    </button>
+                ) : <></>
+            }
+        </>
+
+        // <button className="btn-favorite-off">
+        //   Favorite <FaRegHeart size={16} />
+        // </button>
+    );
 }
 export default BtnFavorite;
