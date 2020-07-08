@@ -7,6 +7,7 @@ import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import api from '../../services/api';
 import AuthContext from '../../contexts/auth';
 import Header from '../../components/Header';
+import BtnFavorite from '../../components/BtnFavorite';
 
 import './styles.css';
 
@@ -14,7 +15,6 @@ function imageDownload({ location }) {
 
     const [url, setUrl] = useState(location.state.url);
     const [grayscale, setGrayscale] = useState(false);
-    const [btnFavorite, setBtnFavorite] = useState(false);
     const [download, setDownload] = useState('');
 
     const history = useHistory();
@@ -37,7 +37,7 @@ function imageDownload({ location }) {
     }
 
     async function handleDownload() {
-        if(signed) {
+        if (signed) {
             await api.post('/downloads', {
                 download_url: url
             });
@@ -58,8 +58,9 @@ function imageDownload({ location }) {
                 </section>
 
                 <section className="content-tools">
-                    <h2>Filters</h2>
-                    <div className="grayscale-filter">
+                    <h2>Filter</h2>
+                    <hr />
+                    <div className="filter-imageDownload">
                         <h4>Grayscale</h4>
                         <Switch
                             onChange={() => setGrayscale(!grayscale)}
@@ -73,23 +74,15 @@ function imageDownload({ location }) {
                             onHandleColor={'#A26769'}
                         />
                     </div>
-                    <div className="favorite">
-                        {btnFavorite ?
-                            (
-                                <button className="btn-favorite-on" onClick={() => setBtnFavorite(false)}>
-                                    Favorite <FaHeart size={16} />
-                                </button>
-
-                            ) :
-                            (
-                                <button className="btn-favorite-off" onClick={() => setBtnFavorite(true)}>
-                                    Favorite <FaRegHeart size={16} />
-                                </button>
-                            )
-                        }
-                    </div>
-                    <div className="dropdown">
-                        <a href={download} download className="dropbtn" onClick={handleDownload}>Download<FiArrowDown size={18} /></a>
+                    <div className="tool-imageDownload">
+                        <h2>Tools</h2>
+                        <hr/>
+                        <div className="favorite">
+                            <BtnFavorite />
+                        </div>
+                        <div className="btn-download">
+                            <a href={download} download onClick={handleDownload}>Download<FiArrowDown size={18} /></a>
+                        </div>
                     </div>
                 </section>
             </main>
