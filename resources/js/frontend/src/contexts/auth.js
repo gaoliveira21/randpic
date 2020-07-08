@@ -7,6 +7,7 @@ const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('@Randpic:user')));
+    const [token, setToken] = useState(localStorage.getItem('@Randpic:token'));
 
     useEffect(() => {
         const storagedToken = localStorage.getItem('@Randpic:token');
@@ -26,6 +27,7 @@ export function AuthProvider({ children }) {
             localStorage.setItem('@Randpic:token', access_token);
 
             setUser(user);
+            setToken(access_token);
             return true;
         } catch (error) {
             toast.error('Fails on login, was not found a user with this email and password');
@@ -45,6 +47,7 @@ export function AuthProvider({ children }) {
             localStorage.setItem('@Randpic:token', access_token);
 
             setUser(user);
+            setToken(access_token);
             return true;
         } catch (error) {
             toast.error('Fails on create user');
@@ -77,6 +80,7 @@ export function AuthProvider({ children }) {
         <AuthContext.Provider value={{
             signed: !!user,
             user,
+            token,
             signIn,
             signUp,
             signOut,

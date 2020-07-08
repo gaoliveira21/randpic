@@ -26,6 +26,8 @@
     },
     "dependencies": {
         "@rocketseat/unform": "^1.6.2",
+        "date-fns": "^2.14.0",
+        "js-file-download": "^0.4.12",
         "react-icons": "^3.10.0",
         "react-router-dom": "^5.2.0",
         "react-switch": "^5.0.1",

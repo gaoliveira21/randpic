@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Switch from 'react-switch';
 import { FiImage, FiDownload } from 'react-icons/fi';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
@@ -14,6 +14,7 @@ function ImagesList() {
 
     const [btnFavorite, setBtnFavorite] = useState(false);
     const [images, setImages] = useState([]);
+    const history = useHistory();
 
     useEffect(() => {
         async function loadImages() {
@@ -31,9 +32,12 @@ function ImagesList() {
         loadImages();
     }, [])
 
-    // function handleClickImage() {
-    //     console.log(document.querySelectorAll('img'));
-    // }
+    function handleClickImage({ id, download_url }) {
+        history.push('/imageDownload', {
+            id,
+            url: download_url
+        })
+    }
 
     return (
         <>
@@ -44,13 +48,13 @@ function ImagesList() {
                     <div className="grid-imagesList">
                         {images.map(image => (
                             <div key={image.id} className="grid-item">
-                                <div className="card-image hoverzoom">
+                                <div className="card-image hoverzoom" onClick={() => handleClickImage(image)}>
                                     <img src={image.download_url} alt="" className="grid-item-image" />
                                     <Link to="#" className="retina"><FiDownload size={20} />Baixar imagem</Link>
                                 </div>
                                 <div className='card-description'>
                                     <div className="card-text">
-                                        <h3>Imagem</h3>
+                                        <h3>{image.author}</h3>
                                     </div>
                                     <div className="card-favorite">
                                         {btnFavorite ?
