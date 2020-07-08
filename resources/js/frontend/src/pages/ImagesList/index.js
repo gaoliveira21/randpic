@@ -54,7 +54,7 @@ function ImagesList() {
                                 </div>
                                 <div className='card-description'>
                                     <div className="card-text">
-                                        <h3>Imagem</h3>
+                                        <h3>{image.author}</h3>
                                     </div>
                                     <div className="card-favorite">
                                         {btnFavorite ?
