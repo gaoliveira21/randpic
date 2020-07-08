@@ -31,11 +31,12 @@ function CollectionImages({ location }) {
         loadImages();
     }, []);
 
-    function handleNavigate({ image_id, download_url }) {
+    function handleNavigate({ image_id, download_url, author }) {
         console.log(image_id, download_url);
         history.push('/imageDownload', {
             id: image_id,
-            url: download_url
+            url: download_url,
+            author
         })
     }
 
@@ -57,7 +58,7 @@ function CollectionImages({ location }) {
                                 </div>
                                 <div className='card-description-collection-images'>
                                     <div className="card-text-collection-images">
-                                        {/* <h3>Dogs</h3> */}
+                                        <h3>{image.author}</h3>
                                     </div>
                                     <div className="card-delete-collection-images">
                                         <FiX size={24} />

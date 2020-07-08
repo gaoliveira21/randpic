@@ -23,7 +23,7 @@ function BtnFavorite({ data }) {
 
         if (!active) {
             await api.post(`collections/${id}/images`,
-                { image_id: data.id, download_url: data.download_url },
+                { image_id: data.id, download_url: data.download_url, author: data.author },
                 {
                     headers: {
                         Authorization: `Bearer ${token}`

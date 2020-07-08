@@ -12,14 +12,15 @@ function CardItem(props) {
     function handleClickImage({ id, download_url }) {
         history.push('/imageDownload', {
             id,
-            url: download_url
+            url: download_url,
+            author: props.imageAuthor
         })
     }
     return (
         <div className="grid-item">
             <div className="card-image hoverzoom" onClick={() => handleClickImage(props.image)}>
                 <img src={props.imageDownloadUrl} alt="" className="grid-item-image" />
-                <Link to="#" className="retina"><FiDownload size={20} />Baixar imagem</Link>
+                <span className="retina"><FiDownload size={20} />Baixar imagem</span>
             </div>
             <div className='card-description'>
                 <div className="card-text">

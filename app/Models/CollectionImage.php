@@ -13,7 +13,7 @@ class CollectionImage extends Model
 	 * @var array
 	 */
     protected $fillable = [
-        'image_id', 'blur', 'grayscale', 'collection_id', 'download_url'
+        'image_id', 'blur', 'grayscale', 'collection_id', 'download_url', 'author'
     ];
 
     public function collection()

@@ -40,7 +40,8 @@ class CollectionImageController extends Controller
             'image_id' => 'required|numeric|min:1',
             'grayscale' => 'boolean',
             'blur' => 'numeric|min:0|max:5',
-            'download_url' => 'required'
+            'download_url' => 'required',
+            'author' => 'required'
         ]);
 
         if($validator->fails()) {
