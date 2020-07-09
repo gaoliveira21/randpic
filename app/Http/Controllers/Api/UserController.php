@@ -27,13 +27,13 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 400);
+            return response()->json(['errors' => $validator->errors()], 400); // Bad Request
         }
 
         ['email' => $email, 'password' => $decryptedPassword] = $request->all();
 
         if(User::where('email', $email)->get()->first()) {
-            return response()->json(['error' => 'User already exist'], 400);
+            return response()->json(['error' => 'User already exist'], 400); // Bad Request
         }
 
         $user = User::create($request->all());
@@ -44,7 +44,7 @@ class UserController extends Controller
 
         $token = auth()->attempt(['email' => $user->email, 'password' => $decryptedPassword]);
 
-        return response()->json(['user' => $user, 'access_token' => $token], 201);
+        return response()->json(['user' => $user, 'access_token' => $token], 201); // Created
     }
 
     /**
@@ -58,7 +58,7 @@ class UserController extends Controller
         $id = $request->attributes->get('loggedUserID');
 
         if(!$user = User::find($id)) {
-            return response()->json(['error' => 'User not found'], 404);
+            return response()->json(['error' => 'User not found'], 404); // Not found
         }
 
         return response()->json($user->load('collections'));
@@ -79,19 +79,19 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 400);
+            return response()->json(['errors' => $validator->errors()], 400); // Bad Request
+        }
+
+        if(!$request->all()){
+            return response()->json(['error' => 'Nothing was sent'], 400); // Bad Request
         }
 
         $userId = $request->attributes->get('loggedUserID');
         $user = User::find($userId);
 
-        if(!$request->all()){
-            return response()->json(['error' => 'No body sent'], 400);
-        }
-
         $user->update($request->all());
 
-        return response()->json($user->load('collections'), 200);
+        return response()->json($user->load('collections'), 200); // OK
     }
 
 }
