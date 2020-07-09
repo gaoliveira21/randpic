@@ -59,7 +59,7 @@ function CollectionImages({ location }) {
         <>
             <Header></Header>
             <main className="container-collection-images">
-                <span onClick={backPage} className="back-page"><FiArrowLeft />Voltar</span>
+                <span onClick={backPage} className="back-page"><FiArrowLeft />Back</span>
                 <div className="title-collection-images">
                     <h1>{location.state.name}</h1>
                 </div>
@@ -69,14 +69,14 @@ function CollectionImages({ location }) {
                             <div key={image.id} className="item-collection-images">
                                 <div className="card-image hoverzoom">
                                     <img src={`https://picsum.photos/id/${image.image_id}/800/800`} alt="" className="collection-item-image" />
-                                    <span onClick={() => handleNavigate(image)} className="retina"><FiDownload size={20} />Baixar imagem</span>
+                                    <span onClick={() => handleNavigate(image)} className="retina"><FiDownload size={20} />Download image</span>
                                 </div>
                                 <div className='card-description-collection-images'>
                                     <div className="card-text-collection-images">
                                         <h3>{image.author}</h3>
                                     </div>
                                     <div className="card-delete-collection-images">
-                                        <FiX onClick={() => handleRemoveImage(image)} size={24} />
+                                        <FiX onClick={() => handleRemoveImage(image)} size={24}/>
                                     </div>
                                 </div>
                             </div>

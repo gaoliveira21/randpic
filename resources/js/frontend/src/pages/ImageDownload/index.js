@@ -72,11 +72,6 @@ function imageDownload({ location }) {
                         />
                     </div>
                     <div className="tool-imageDownload">
-                        <h2>Tools</h2>
-                        <hr />
-                        {/* <div className="favorite">
-                            <BtnFavorite />
-                        </div> */}
                         <div>
                             <a href={download} className="btn-download" download onClick={handleDownload}>Download<FiArrowDown size={18} /></a>
                         </div>

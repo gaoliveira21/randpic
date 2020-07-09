@@ -23,7 +23,7 @@ function ImagesList() {
         async function loadImages() {
             setLoading(true);
             const imagesResponse = [];
-            for (let index = 1; index <= 6; index++) {
+            for (let index = 1; index <= 1; index++) {
                 try {
                     const response = await api.get(`https://picsum.photos/id/${randomNumber(1, 1000)}/info`);
                     imagesResponse.push(response.data);
@@ -36,13 +36,6 @@ function ImagesList() {
         }
         loadImages();
     }, [])
-
-    // function handleClickImage({ id, download_url }) {
-    //     history.push('/imageDownload', {
-    //         id,
-    //         url: download_url
-    //     })
-    // }
 
     return (
         <>

@@ -35,15 +35,15 @@ function SignUp() {
                         <h2>Sign Up</h2>
                         <div>
                             <label htmlFor="name">Name</label>
-                            <Input type="text" id="name" name="name" />
+                            <Input type="text" id="name" name="name" placeholder="Type your name" />
                         </div>
                         <div>
                             <label htmlFor="email">Email</label>
-                            <Input type="text" id="email" name="email" />
+                            <Input type="text" id="email" name="email" placeholder="Type your email"/>
                         </div>
                         <div>
                             <label htmlFor="password">Password</label>
-                            <Input type="password" id="password" name="password" />
+                            <Input type="password" id="password" name="password" placeholder="Type your password" />
                         </div>
                         <button type="submit">Sign Up <FiLogIn></FiLogIn></button>
                         <p>Have an account?<Link to="/login"> Sign in here</Link>
