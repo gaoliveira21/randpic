@@ -42,7 +42,6 @@ function BtnFavorite({ data }) {
     }
 
     return (
-
         <>
             {
                 signed ? (
@@ -52,10 +51,6 @@ function BtnFavorite({ data }) {
                 ) : <></>
             }
         </>
-
-        // <button className="btn-favorite-off">
-        //   Favorite <FaRegHeart size={16} />
-        // </button>
     );
 }
 export default BtnFavorite;

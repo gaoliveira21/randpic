@@ -37,11 +37,11 @@ function SignIn() {
                         <h2>Sign In</h2>
                         <div>
                             <label htmlFor="email">Email</label>
-                            <Input type="text" id="email" name="email" placeholder="Digite seu email" />
+                            <Input type="text" id="email" name="email" placeholder="Type your email" />
                         </div>
                         <div>
                             <label htmlFor="password">Password</label>
-                            <Input type="password" id="password" name="password" placeholder="Digite sua senha" />
+                            <Input type="password" id="password" name="password" placeholder="Type your password" />
                         </div>
                         <button type="submit">Sign In <FiLogIn></FiLogIn></button>
                         <p>Don't have an account?<Link to="/register"> Sign up here</Link>

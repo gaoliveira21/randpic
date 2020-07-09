@@ -20,7 +20,7 @@ function CardItem(props) {
         <div className="grid-item">
             <div className="card-image hoverzoom" onClick={() => handleClickImage(props.image)}>
                 <img src={props.imageDownloadUrl} alt="" className="grid-item-image" />
-                <span className="retina"><FiDownload size={20} />Baixar imagem</span>
+                <span className="retina"><FiDownload size={20} />Download image</span>
             </div>
             <div className='card-description'>
                 <div className="card-text">

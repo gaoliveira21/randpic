@@ -24,7 +24,7 @@ function User() {
             <Header></Header>
             <main className="container-user">
                 <section>
-                    <h1>Perfil</h1>
+                    <h1>Profile</h1>
                     <Form schema={schema} initialData={user} onSubmit={handleSubmit} className="form-user">
                         <div>
                             <label htmlFor="name">Name:</label>
@@ -35,7 +35,7 @@ function User() {
                             <Input type="email" name="email" id="email" />
                         </div>
                         <div className="button">
-                            <button type="submit">Enviar<FiEdit /></button>
+                            <button type="submit">Edit<FiEdit /></button>
                         </div>
                     </Form>
                 </section>

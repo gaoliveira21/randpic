@@ -25,21 +25,17 @@
   margin-left: 24px;
   width: 50%;
 }
-.content-home button {
+.content-home a button {
   width: 100%;
   margin: 24px 0;
   padding: 18px 48px;
   background-color: #A26769;
   font-weight: 700;
   font-size: 16px;
+  color: #FFF;
 }
-.content-home button a {
-  color: #fff;
-}
-.content-home button svg{
-  margin-right: 12px;
-  font-weight: 700;
-  font-size: 16px;
+.content-home a button svg{
+  margin-right: 8px;
   color: #fff;
 }
 

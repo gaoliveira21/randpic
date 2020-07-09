@@ -44,11 +44,11 @@ function Download() {
             <Header></Header>
             <main>
                 <section className="container-download">
-                    <h1>Lista de Downloads</h1>
+                    <h1>Download List</h1>
                     <table>
                         <thead>
                             <tr>
-                                <th>Imagem</th>
+                                <th>Image</th>
                                 <th>Date</th>
                             </tr>
                         </thead>

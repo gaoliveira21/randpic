@@ -8,6 +8,9 @@
 .card-image{
   height: calc(300px - 60px);
 }
+.card-image span{
+  cursor: pointer;
+}
 .card-description{
   height: 60px;
   display: flex;
