@@ -31,92 +31,11 @@
   height: 300px;
   grid-gap: 12px;
 }
-/* .grid-item{
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
-  border-radius: 4px;
-}
-.card-image{
-  height: calc(300px - 60px);
-}
-.card-description{
-  height: 60px;
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 0 16px;
-}
-.card-text{
-  text-align: left;
-  width:70%;
-}
-.card-favorite{
-  width: 30%;
-  text-align: right;
-}
-.card-favorite button{
-  padding: 10px 0;
-}
 
-.grid-item-image{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 4px 4px 0px 0px;
+/* Load */
+.load {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.hoverzoom {
-	position: relative;
-  overflow: hidden;
-}
-.hoverzoom > img {
-  width: 100%; 
-	-webkit-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-	    -moz-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-	     -ms-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-	      -o-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-	         transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-}
-.hoverzoom:hover > img {
-	-webkit-transform: scale(1.5);
-	   -moz-transform: scale(1.5);
-	    -ms-transform: scale(1.5);
-	     -o-transform: scale(1.5);
-	        transform: scale(1.5);
-}
-.hoverzoom .retina{
-	position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;    
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);    
-    border-radius: 2px;
-    text-align: center;
-
-    -webkit-transition:	 all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-	    -moz-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-	     -ms-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-	      -o-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-	         transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000); 
-}
-.hoverzoom:hover .retina {
-    opacity: 1;
-    box-shadow: inset 0 0 100px 50px rgba(0,0,0,.5);
-    
-}
-.retina{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: 700;
-  margin-right: 8px;
-	color: #fff;
-  text-align: center;
-}
-.retina svg {
-  margin-right: 8px;
-} */

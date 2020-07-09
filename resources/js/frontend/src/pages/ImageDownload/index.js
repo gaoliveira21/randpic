@@ -12,7 +12,6 @@ import BtnFavorite from '../../components/BtnFavorite';
 import './styles.css';
 
 function imageDownload({ location }) {
-
     const [url, setUrl] = useState(location.state.url);
     const [grayscale, setGrayscale] = useState(false);
     const [download, setDownload] = useState('');
@@ -26,7 +25,6 @@ function imageDownload({ location }) {
 
     useEffect(() => {
         fetch(url).then(response => response.blob().then(blob => {
-            console.log(response);
             const downloadUrl = window.URL.createObjectURL(blob);
             setDownload(downloadUrl);
         }));
@@ -48,9 +46,8 @@ function imageDownload({ location }) {
         <>
             <Header />
             <div className="title">
-                <span href="#" onClick={backPage} className="back-page"><FiArrowLeft />Voltar</span>
-                <h1>Nome da Imagem</h1>
-                <h3>Nome completo do autor</h3>
+                <span href="#" onClick={backPage} className="back-page"><FiArrowLeft />Back</span>
+                <h1>{location.state.author}</h1>
             </div>
             <main className="container-imageDownload">
                 <section className="content-imageDownload">
@@ -76,12 +73,12 @@ function imageDownload({ location }) {
                     </div>
                     <div className="tool-imageDownload">
                         <h2>Tools</h2>
-                        <hr/>
-                        <div className="favorite">
+                        <hr />
+                        {/* <div className="favorite">
                             <BtnFavorite />
-                        </div>
-                        <div className="btn-download">
-                            <a href={download} download onClick={handleDownload}>Download<FiArrowDown size={18} /></a>
+                        </div> */}
+                        <div>
+                            <a href={download} className="btn-download" download onClick={handleDownload}>Download<FiArrowDown size={18} /></a>
                         </div>
                     </div>
                 </section>
