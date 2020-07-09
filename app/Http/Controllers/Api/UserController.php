@@ -38,7 +38,7 @@ class UserController extends Controller
 
         $user = User::create($request->all());
         Collection::create([
-            'name' => 'favorites',
+            'name' => 'Favorites',
             'user_id' => $user->id
         ]);
 

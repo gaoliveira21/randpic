@@ -27,9 +27,10 @@ function Collection() {
         loadCollections();
     }, []);
 
-    function handleNavigate(id) {
+    function handleNavigate({ id, name }) {
         history.push('/collectionImages', {
             collection_id: id,
+            name
         });
     }
 
@@ -40,7 +41,7 @@ function Collection() {
                 <h1>Collections</h1>
                 <section className="grid-collection">
                     {collections.map(collection => (
-                        <span key={collection.id} onClick={() => handleNavigate(collection.id)} >
+                        <span key={collection.id} onClick={() => handleNavigate(collection)} >
                             <div className="card-collection">
                                 <div className="card-image-collection">
                                     <FiImage size={36} />

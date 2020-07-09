@@ -9,6 +9,7 @@ import Header from '../../../components/Header';
 import './styles.css';
 
 function CollectionImages({ location }) {
+    console.log(location);
     const [images, setImages] = useState([]);
 
     const { token } = useContext(AuthContext);
@@ -32,12 +33,26 @@ function CollectionImages({ location }) {
     }, []);
 
     function handleNavigate({ image_id, download_url, author }) {
-        console.log(image_id, download_url);
         history.push('/imageDownload', {
             id: image_id,
             url: download_url,
             author
         })
+    }
+
+    async function handleRemoveImage({ image_id }) {
+        if (window.confirm('Do you want to remove this image?')) {
+            const { collection_id } = location.state;
+            await api.delete(`/collections/${collection_id}/images/${image_id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+            const imgs = images.filter(image => image.image_id !== image_id);
+            setImages(imgs);
+        }
+
     }
 
     return (
@@ -46,7 +61,7 @@ function CollectionImages({ location }) {
             <main className="container-collection-images">
                 <span onClick={backPage} className="back-page"><FiArrowLeft />Voltar</span>
                 <div className="title-collection-images">
-                    <h1>Favorites</h1>
+                    <h1>{location.state.name}</h1>
                 </div>
                 <section>
                     <div className="grid-collection-images">
@@ -61,7 +76,7 @@ function CollectionImages({ location }) {
                                         <h3>{image.author}</h3>
                                     </div>
                                     <div className="card-delete-collection-images">
-                                        <FiX size={24} />
+                                        <FiX onClick={() => handleRemoveImage(image)} size={24} />
                                     </div>
                                 </div>
                             </div>

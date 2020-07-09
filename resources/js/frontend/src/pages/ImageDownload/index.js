@@ -74,11 +74,11 @@ function imageDownload({ location }) {
                     <div className="tool-imageDownload">
                         <h2>Tools</h2>
                         <hr />
-                        <div className="favorite">
+                        {/* <div className="favorite">
                             <BtnFavorite />
-                        </div>
-                        <div className="btn-download">
-                            <a href={download} download onClick={handleDownload}>Download<FiArrowDown size={18} /></a>
+                        </div> */}
+                        <div>
+                            <a href={download} className="btn-download" download onClick={handleDownload}>Download<FiArrowDown size={18} /></a>
                         </div>
                     </div>
                 </section>

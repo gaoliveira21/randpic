@@ -19,7 +19,7 @@ function BtnFavorite({ data }) {
             }
         });
 
-        const { id } = response.data.filter(res => res.name === "favorites")[0];
+        const { id } = response.data.filter(res => res.name === "Favorites")[0];
 
         if (!active) {
             await api.post(`collections/${id}/images`,

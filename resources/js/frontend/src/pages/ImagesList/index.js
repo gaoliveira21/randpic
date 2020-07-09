@@ -7,6 +7,7 @@ import randomNumber from '../../utils/randomNumber';
 
 import api from '../../services/api';
 
+import Loading from '../../components/Loading';
 import Header from '../../components/Header';
 import CardItem from '../../components/CardItem';
 import './styles.css';
@@ -14,11 +15,13 @@ import './styles.css';
 function ImagesList() {
 
     const [btnFavorite, setBtnFavorite] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [images, setImages] = useState([]);
     const history = useHistory();
 
     useEffect(() => {
         async function loadImages() {
+            setLoading(true);
             const imagesResponse = [];
             for (let index = 1; index <= 6; index++) {
                 try {
@@ -29,6 +32,7 @@ function ImagesList() {
                 }
             }
             setImages(imagesResponse);
+            setLoading(false);
         }
         loadImages();
     }, [])
@@ -43,35 +47,27 @@ function ImagesList() {
     return (
         <>
             <Header></Header>
-            <main className="container-imagesList">
-                <h1>We chose these images for you</h1>
-                <section>
-                    <div className="grid-imagesList">
-                        {images.map(image => (
-                            <CardItem
-                                key={image.id}
-                                image={image}
-                                imageDownloadUrl={image.download_url}
-                                imageAuthor={image.author}
-                            />
-                            // <div key={image.id} className="grid-item">
-                            //     <div className="card-image hoverzoom" onClick={() => handleClickImage(image)}>
-                            //         <img src={image.download_url} alt="" className="grid-item-image" />
-                            //         <Link to="#" className="retina"><FiDownload size={20} />Baixar imagem</Link>
-                            //     </div>
-                            //     <div className='card-description'>
-                            //         <div className="card-text">
-                            //             <h3>{image.author}</h3>
-                            //         </div>
-                            //         <div className="card-favorite">
-                            //           <BtnFavorite/>
-                            //         </div>
-                            //     </div>
-                            // </div>
-                        ))}
-                    </div>
-                </section>
-            </main>
+            {loading ? (
+                <div className="load">
+                    <Loading />
+                </div>
+            ) : (
+                    <main className="container-imagesList">
+                        <h1>We chose these images for you</h1>
+                        <section>
+                            <div className="grid-imagesList">
+                                {images.map(image => (
+                                    <CardItem
+                                        key={image.id}
+                                        image={image}
+                                        imageDownloadUrl={image.download_url}
+                                        imageAuthor={image.author}
+                                    />
+                                ))}
+                            </div>
+                        </section>
+                    </main>
+                )}
         </>
     );
 }
