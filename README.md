@@ -75,8 +75,8 @@ $ npm run dev
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/gaoliveira21"><img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/49168654?s=460&u=8ac003e771ed934bc3a5fdf32bcce1007221bb0b&v=4" width="100px;" alt=""/><br /><sub><b>Gabriel Oliveira</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/pedrooV2"><img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/46503582?s=460&u=fd663420ed854c1c8cd4adbe451e7d38da6a8973&v=4" width="100px;" alt=""/><br /><sub><b>Pedro Lucas</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/gaoliveira21"><img style="border-radius: 50%;" src="./.github/gabriel.jpg" width="100px;" alt=""/><br /><sub><b>Gabriel Oliveira</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/pedrooV2"><img style="border-radius: 50%;" src="./.github/pedro.jpg" width="100px;" alt=""/><br /><sub><b>Pedro Lucas</b></sub></a><br /></td>
   </tr>
 </table>
 
