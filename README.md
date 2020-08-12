@@ -1,6 +1,9 @@
-# How to run
+# :art: RandPic
 
-- create `.env` based on `.env.example`
-- `npm install` install node dependecies
-- `composer install` install laravel dependecies
-- `npm run watch` run laravel mix
+<p>Gerador de imagens aleatório.</p>
+
+<img alt="Home do sistema" title="#RandPic" src="./.github/home.png" />
+
+---
+
+## 🛠️ Tecnologias

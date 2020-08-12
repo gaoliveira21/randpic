@@ -1,12 +1,12 @@
 version: "3"
 services:
-  mariadb:
+  mysqldb:
     image: mysql:5.7
     container_name: randpic_db
     restart: unless-stopped
     environment:
       - "MYSQL_ROOT_PASSWORD=root"
     volumes:
-      - ./data/db:/var/lib/db
+      - ./data/mysql:/var/lib/mysql
     ports:
       - "3306:3306"
