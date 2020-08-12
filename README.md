@@ -69,15 +69,14 @@ $ npm run dev
 
 :warning: endpoints da API disponíveis [aqui!](https://github.com/gaoliveira21/randpic/tree/master/.github)
 
-
 ---
 
-### Feito por:
+### :construction_worker: Feito por:
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/gaoliveira21"><img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/49168654?s=460&u=8ac003e771ed934bc3a5fdf32bcce1007221bb0b&v=4" width="100px;" alt=""/><br /><sub><b>Gabriel Oliveira</b></sub></a><br /><a href="https://github.com/pedrooV2" title="Gabriel">:rocket:</a></td>
-    <td align="center"><a href="https://github.com/pedrooV2"><img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/46503582?s=460&u=fd663420ed854c1c8cd4adbe451e7d38da6a8973&v=4" width="100px;" alt=""/><br /><sub><b>Pedro Lucas</b></sub></a><br /><a href="https://github.com/pedrooV2" title="Rocketseat">:rocket:</a></td>
+    <td align="center"><a href="https://github.com/gaoliveira21"><img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/49168654?s=460&u=8ac003e771ed934bc3a5fdf32bcce1007221bb0b&v=4" width="100px;" alt=""/><br /><sub><b>Gabriel Oliveira</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/pedrooV2"><img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/46503582?s=460&u=fd663420ed854c1c8cd4adbe451e7d38da6a8973&v=4" width="100px;" alt=""/><br /><sub><b>Pedro Lucas</b></sub></a><br /></td>
   </tr>
 </table>
 
