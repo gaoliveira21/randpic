@@ -67,6 +67,8 @@ $ npm run dev
 # O servidor inciará na porta:8000 - acesse <http://localhost:8000>
 ```
 
+:warning: endpoints da API disponiveis [aqui!](https://github.com/gaoliveira21/randpic/tree/master/.github)
+
 ### :memo: License
 Esse projeto está sob MIT license. Veja [LICENSE](https://github.com/gaoliveira21/bootcamp-gostack-fastfeet-api/blob/master/LICENSE.md) para mais informações.
 
