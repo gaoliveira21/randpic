@@ -81,7 +81,7 @@ $ npm run dev
 </table>
 
 ### :memo: License
-Esse projeto está sob MIT license. Veja [LICENSE](https://github.com/gaoliveira21/bootcamp-gostack-fastfeet-api/blob/master/LICENSE.md) para mais informações.
+Esse projeto está sob MIT license. Veja [LICENSE](https://github.com/gaoliveira21/randpic/blob/master/LICENSE) para mais informações.
 
 ---
 
